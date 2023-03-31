@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,22 +10,46 @@
     <!--CDN-->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-
     <!-- Popper JS -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <!--Iconos-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Styles-->
+    <link rel="stylesheet" href="recursos/css/styles.css">
+
 </head>
 
-<body>
-
+<body class="inicio">
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card transparencia">
+                    <div class="card-header text-center">
+                        Iniciar Sesión
+                    </div>
+                    <div class="card-body transparencia">
+                        <form>
+                            <div class="form-group">
+                                <label for="username">Usuario</label>
+                                <input type="text" id="username" class="form-control" placeholder="Ingresa usuario">
+                            </div>
+                            <div class="form-group">
+                                <label for="contrasenia">Contraseña</label>
+                                <input type="password" id="contrasenia" class="form-control"
+                                    placeholder="Ingresa contraseña">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" style="opacity: 1;"><a
+                                    href="inicio.html">Iniciar sesión</a></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

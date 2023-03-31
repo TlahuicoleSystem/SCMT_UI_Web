@@ -1,0 +1,53 @@
+.inicio {
+    background-image: url(../img/carretera-rodeada-colinas-cielo-nublado.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.transparencia {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+.fondo {
+    background-color: #263245;
+}
+
+.sin-padding {
+    padding: 0rem;
+}
+
+.nav-personal {
+    background-color: #202124;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.espaciado-img {
+    padding: 0.5rem 0.5rem;
+    border-radius: 3rem;
+}
+
+.espaciado-texto {
+    padding: 1.1rem 1rem;
+    margin: 0rem;
+}
+
+.color-texto {
+    color: #4ECDE6;
+}
+
+.padding-container {
+    padding: 5rem 0rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
