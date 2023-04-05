@@ -51,3 +51,11 @@ a:hover {
     text-decoration: none;
     color: white;
 }
+
+.btn-padding {
+    padding: .375rem 2.75rem;
+}
+
+.btn-ubicacion {
+    margin: 2rem 0rem;
+}
