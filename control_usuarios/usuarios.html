@@ -19,19 +19,81 @@
     <!--Iconos-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Styles-->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../recursos/css/styles.css">
     <link rel="stylesheet" href="recursos/css/usuarios.css">
 </head>
 
 <body class="fondo">
-    <nav class="navbar sin-padding">
-        <div class="container-fluid sin-padding">
-            <div class="text-center nav-personal">
-                <div class="circle me-2">
-                    <img src="https://via.placeholder.com/50" alt="Imagen de perfil" class="img-fluid espaciado-img">
+    <nav>
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <i class='bx bxs-truck'></i>
+                    <div class="logo_name">SCMT</div>
                 </div>
-                <a href="#" class="color-texto espaciado-texto">Josue Barrales Galvez</a>
+                <i class='bx bx-menu' id='btn'></i>
             </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="../inicio.html">
+                        <i class='bx bx-grid'></i>
+                        <span class="link_name">Inicio</span>
+                    </a>
+                    <span class="tooltip">Inicio</span>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class='bx bxs-user-detail'></i>
+                        <span class="link_name">Control de usuarios</span>
+                    </a>
+                    <span class="tooltip">Control de usuarios</span>
+                </li>
+                <li>
+                    <a href="/ubicacion_unidades/unidades.html">
+                        <i class='bx bx-map'></i>
+                        <span class="link_name">Ubicacion de unidades</span>
+                    </a>
+                    <span class="tooltip">Ubicacion de unidades</span>
+                </li>
+                <li>
+                    <a href="/crear_rutas/rutas.html">
+                        <i class='bx bxs-map-alt'></i>
+                        <span class="link_name">Crear rutas</span>
+                    </a>
+                    <span class="tooltip">Crear rutas</span>
+                </li>
+                <li>
+                    <a href="/informes/informes.html">
+                        <i class='bx bxs-archive'></i>
+                        <span class="link_name">Informes</span>
+                    </a>
+                    <span class="tooltip">Informes</span>
+                </li>
+                <li>
+                    <a href="/incidencias/incidencias.html">
+                        <i class='bx bxs-bookmark'></i>
+                        <span class="link_name">Incidencias</span>
+                    </a>
+                    <span class="tooltip">Incidencias</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-building'></i>
+                        <span class="link_name">Otros</span>
+                    </a>
+                    <span class="tooltip">Otros</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
+                            class="img-fluid espaciado-img bx">
+                        <span class="link_name">Josue Barrales Galvez</span>
+                    </a>
+                    <span class="tooltip">Josue Barrales Galvez</span>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -126,6 +188,8 @@
             </div>
         </div>
     </div>
+
+    <script src="/recursos/js/nav.js"></script>
 </body>
 
 </html>
