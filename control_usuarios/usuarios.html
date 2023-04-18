@@ -22,6 +22,10 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../recursos/css/styles.css">
     <link rel="stylesheet" href="recursos/css/usuarios.css">
+    <!-- sweet alert -->
+    <script src="../recursos/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../recursos/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../recursos/sweetalert/sweetalert2.min.css">
 </head>
 
 <body class="fondo">
@@ -103,14 +107,14 @@
                 <h1 class="color-texto">Administracion de usuarios</h1>
             </div>
             <div class="col-6 align-items-center alineacion">
-                <button type="button" class="btn btn-info align-content-end" data-toggle="modal"
-                    data-target="#exampleModal">Agregar usuario</button>
+                <button type="button" class="btn btn-info align-content-end"  id="myBtn">Agregar usuario</button>
             </div>
         </div>
 
         <div class="py-4">
             <table class="table table-dark">
                 <thead>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Rol</th>
                     <th scope="col">Usuario</th>
@@ -118,77 +122,183 @@
                     <th scope="col">Modificar</th>
                     <th scope="col">Eliminar</th>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Josue Barrales Galvez</td>
-                        <td>Administrador</td>
-                        <td>josueadmin</td>
-                        <td>Transportes Gutierrez</td>
-                        <td><button type="submit" class="btn btn-success">Modificar</button></td>
-                        <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Abraham Cocoletzi Zempoalteca</td>
-                        <td>Conductor</td>
-                        <td>abrahamchofi</td>
-                        <td>Transportes Gutierrez</td>
-                        <td><button type="submit" class="btn btn-success">Modificar</button></td>
-                        <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
-                    </tr>
-                    <tr>
-                        <td>Alejandro Perez Juarez</td>
-                        <td>Obrero</td>
-                        <td>alejandroflowserve</td>
-                        <td>Transportes Gutierrez</td>
-                        <td><button type="submit" class="btn btn-success">Modificar</button></td>
-                        <td><button type="submit" class="btn btn-danger">Eliminar</button></td>
-                    </tr>
+                <tbody id="contenido">
+                
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="container mt-3">
+        
+      
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar usuario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <label for="exampleFormControlInput1" class="form-text">Escoge el tipo de usuario que
-                        agregaras</label>
-                    <div class="form-check-inline">
-                        <div class="form-check">
-                            <input type="radio" name="tUsuario" id="" class="form-check-input">
-                            <label for="" class="form-check-label">Administrador</label>
+              <div class="modal-header">
+                <h4 class="modal-title">Agregar usuario nuevo</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="http://drive.google.com/uc?export=view&id=1sy0gBjDyL5IXkRRLfWVMcfxpa9N8or8i" class="img-fluid">
                         </div>
-                        <div class="form-check">
-                            <input type="radio" name="tUsuario" id="" class="form-check-input">
-                            <label for="" class="form-check-label">Conductor</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" name="tUsuario" id="" class="form-check-input">
-                            <label for="" class="form-check-label">Obrero</label>
+                        <div class="col-sm-9">
+                            <form id="form-imagen" >
+                                <label for="phone">Fotografia:</label>
+                                <input type="file" class="form-control-file border" name="image" id="image" accept=".jpg, .png, .jpeg" required>
+                            </form>
                         </div>
                     </div>
-                    <label for="exampleFormControlInput1" class="form-text">Nombre</label>
-                    <input type="text" name="" id="" class="form-control">
-                    <label for="" class="form-text">Apellidos</label>
-                    <input type="text" name="" id="" class="form-control">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar usuario</button>
-                </div>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="apellidoP">Apellido paterno:</label>
+                                <input type="text" class="form-control" id="apellidoP" placeholder="López" name="apellidoP" required >
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="apellidoM">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="apellidoM" placeholder="López" name="apellidoM" required>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="usuario">Usuario:</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="admin2" name="apellidoP" required >
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="pwd">Contraseña:</label>
+                                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input bill" name="bill" id="bill" value="1">Administrador
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input bill" name="bill" id="bill" value="2">Conductor
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input bill" name="bill" id="bill" value="3">Pasajero
+                        </label>
+                    </div>  
+                        <div id="admin" style="display:none;">
+                            <hr>
+                            <div class="form-group">
+                                <label for="phone">Telefono:</label>
+                                <input type="tel" class="form-control" id="telefono_admin" placeholder="1231231456" name="telefono_admin" required >
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Descripcion:</label>
+                                <textarea class="form-control" rows="2" id="descripcion_admin" name="descripcion_admin"></textarea>
+                            </div>
+                            <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                        <div id="conductor" style="display:none;">
+                            <hr>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="phone">ID Licencia:</label>
+                                        <input type="tel" class="form-control" id="licencia_conductor" placeholder="1231231456" name="licencia_conductor" required >
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="phone">Telefono:</label>
+                                        <input type="tel" class="form-control" id="telefono_conductor" placeholder="1231231456" name="telefono_conductor" required >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="phone">ID Empleado:</label>
+                                        <input type="number" class="form-control" id="id_empleado_conductor" placeholder="8756" name="id_empleado_conductor" required >
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="name">Direccion:</label>
+                                        <input type="text" minlength="15" class="form-control" id="direccion_conductor" placeholder="Calle y numero" name="direccion_conductor" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col text-center">
+                                 <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
+                            </div>
+                           
+                        </div>
+                        <div id="pasajero" style="display:none;">
+                            <hr>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="phone">ID empleado pasajero:</label>
+                                        <input type="text" class="form-control" id="id_pasajero" placeholder="12397871456" name="id_pasajero" required >
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="nombre">Area en la empresa:</label>
+                                        <input type="text" minlength="5" class="form-control" id="area_pasajero" placeholder="Ventas" name="area_pasajero" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="phone">Turno:</label>
+                                        <input type="text" minlength="5" class="form-control" id="turno_pasajero" placeholder="Centarl" name="turno_pasajero" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="phone">Telefono:</label>
+                                        <input type="tel" class="form-control" id="telefono_pasajero" placeholder="1231231456" name="telefono_pasajero" required >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Jefe inmediato:</label>
+                                <input type="text" minlength="15" class="form-control" id="jefe_inmediato_pasajero" placeholder="Raul perez" name="jefe_inmediato_pasajero" required>
+                            </div>
+                            <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              </div>
+              
             </div>
+          </div>
         </div>
+        
+      </div>
+      
+      <script>
+      $(document).ready(function(){
+        $("#myBtn").click(function(){
+          $("#myModal").modal();
+        });
+      });
+      </script>
+
+    
     </div>
 
+    <script src="recursos/scripts.js"></script>
     <script src="/recursos/js/nav.js"></script>
 </body>
 
