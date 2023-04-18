@@ -1,0 +1,11 @@
+.icono {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 2.75rem;
+    color: #4ECDE6;
+}
+
+.alinear-boton {
+    margin: 0px 20px 10px 0px;
+}
