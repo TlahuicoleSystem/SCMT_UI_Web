@@ -87,7 +87,7 @@
                     <span class="tooltip">Otros</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
                         <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
                             class="img-fluid espaciado-img bx">
                         <span class="link_name">Josue Barrales Galvez</span>
@@ -211,7 +211,39 @@
         </div>
     </div>
 
-    <script src="/recursos/js/nav.js"></script>
+    <!-- Modal Perfil-->
+    <div class="modal fade" id="modal-Perfil" tabindex="-1" role="dialog" aria-labelledby="modal-Perfil-titulo"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header fondo borde">
+                    <h5 class="modal-title color-texto" id="modal-Perfil-titulo">Perfil</h5>
+                    <button type="button" class="close color-texto" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body fondo borde">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-4">
+                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
+                                class="img-fluid img-redondo">
+                        </div>
+                        <div class="col-8 color-texto">
+                            <p>Nombre: Josue Barrales Galvez</p>
+                            <p>Descripcion: Administrador</p>
+                            <p>Telefono: 2761163782</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer fondo borde">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar Sesion</button>
+                    <!-- <button type="button" class="btn btn-primary">Guardar cambios</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/recursos/js/inicio.js"></script>
 </body>
 
 </html>

@@ -86,7 +86,7 @@
                     <span class="tooltip">Otros</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
                         <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
                             class="img-fluid espaciado-img bx">
                         <span class="link_name">Josue Barrales Galvez</span>
@@ -98,14 +98,81 @@
     </nav>
 
     <div class="container py-4">
-        <div class="row">
+        <div class="row py-2">
             <div class="col-12">
                 <h1 class="color-texto">Reportes de incidencias</h1>
             </div>
         </div>
+        <div class="row py-2">
+            <div class="col-3">
+                <select name="" id="" class="form-control">
+                    <option value="">Selecciona una ruta</option>
+                    <option value="">Soriana</option>
+                    <option value="">Zacatelco</option>
+                    <option value="">Xaltocan</option>
+                    <option value="">Apizaco</option>
+                    <option value="">Puebla</option>
+                </select>
+            </div>
+        </div>
+        <div class="py-2">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Juan Perez Rodriguez</td>
+                        <td id="fecha-actual_0"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Hugo Sanchez Juarez</td>
+                        <td id="fecha-actual_1"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <script src="/recursos/js/nav.js"></script>
+    <!-- Modal Perfil-->
+    <div class="modal fade" id="modal-Perfil" tabindex="-1" role="dialog" aria-labelledby="modal-Perfil-titulo"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header fondo borde">
+                    <h5 class="modal-title color-texto" id="modal-Perfil-titulo">Perfil</h5>
+                    <button type="button" class="close color-texto" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body fondo borde">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-4">
+                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
+                                class="img-fluid img-redondo">
+                        </div>
+                        <div class="col-8 color-texto">
+                            <p>Nombre: Josue Barrales Galvez</p>
+                            <p>Descripcion: Administrador</p>
+                            <p>Telefono: 2761163782</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer fondo borde">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar Sesion</button>
+                    <!-- <button type="button" class="btn btn-primary">Guardar cambios</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/recursos/js/inicio.js"></script>
 </body>
 
 </html>

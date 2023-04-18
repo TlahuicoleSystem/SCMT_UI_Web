@@ -236,6 +236,10 @@
     margin-bottom: 0rem;
 }
 
+.img-redondo {
+    border-radius: 6rem;
+}
+
 .espaciado-texto {
     padding: 1.1rem 1rem;
     margin: 0rem;
@@ -246,7 +250,7 @@
 }
 
 .padding-container {
-    padding: 5rem 0rem;
+    padding: 2rem 0rem;
 }
 
 a {
@@ -274,4 +278,9 @@ a:hover {
 .boton-ovalo:hover {
     border-radius: 1rem;
     color: black;
+}
+
+.borde {
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
