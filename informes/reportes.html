@@ -39,52 +39,49 @@
 
             <ul class="nav">
                 <li>
-                    <a href="../inicio.html" data-toggle="tooltip" data-placement="top" title="Inicio">
+                    <a href="../inicio.html">
                         <i class='bx bx-grid'></i>
                         <span class="link_name">Inicio</span>
                     </a>
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
-                    <a href="/control_usuarios/usuarios.html" data-toggle="tooltip" data-placement="top"
-                        title="Control de usuarios">
+                    <a href="/control_usuarios/usuarios.html">
                         <i class='bx bxs-user-detail'></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
                     <span class="tooltip">Control de usuarios</span>
                 </li>
                 <li>
-                    <a href="/ubicacion_unidades/unidades.html" data-toggle="tooltip" data-placement="top"
-                        title="Ubicacion de unidades">
+                    <a href="/ubicacion_unidades/unidades.html">
                         <i class='bx bx-map'></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
                 </li>
                 <li>
-                    <a href="/crear_rutas/rutas.html" data-toggle="tooltip" data-placement="top" title="Crear rutas">
+                    <a href="/crear_rutas/rutas.html">
                         <i class='bx bxs-map-alt'></i>
                         <span class="link_name">Crear rutas</span>
                     </a>
                     <span class="tooltip">Crear rutas</span>
                 </li>
                 <li>
-                    <a href="informes.html" data-toggle="tooltip" data-placement="top" title="Informes">
+                    <a href="informes.html">
                         <i class='bx bxs-archive'></i>
                         <span class="link_name">Informes</span>
                     </a>
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
-                    <a href="/incidencias/incidencias.html" data-toggle="tooltip" data-placement="top"
-                        title="Incidencias">
+                    <a href="/incidencias/incidencias.html">
                         <i class='bx bxs-bookmark'></i>
                         <span class="link_name">Incidencias</span>
                     </a>
                     <span class="tooltip">Incidencias</span>
                 </li>
                 <li>
-                    <a href="#" data-toggle="tooltip" data-placement="top" title="Otros">
+                    <a href="#">
                         <i class='bx bxs-building'></i>
                         <span class="link_name">Otros</span>
                     </a>
@@ -103,71 +100,37 @@
     </nav>
 
     <div class="container py-4">
-        <div class="row">
+        <div class="row p-2">
             <div class="col-12">
-                <h1 class="color-texto">Informes de estado</h1>
+                <h1 class="color-texto">Informe de:</h1>
             </div>
         </div>
-
-        <div class="py-3">
-            <div class="row py-2">
-                <div class="col-6">
-                    <div class="fondo p-2">
-                        <div class="icono">
-                            <i class="fas fa-file-download"></i>
-                        </div>
-                        <h3 class="color-texto">Informe de Incidencias</h3>
-                        <p class="color-texto">Aqui puedes descargar un informe de las incidencias de las unidades</p>
-                        <div class="text-right alinear-boton">
-                            <a href="reportes.html">
-                                <button type="button" class="btn btn-primary boton-ovalo">Visualizar</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="fondo p-2">
-                        <div class="icono">
-                            <i class="fas fa-file-download"></i>
-                        </div>
-                        <h3 class="color-texto">Informe de Rutas</h3>
-                        <p class="color-texto">Aqui puedes descargar un informe de las rutas</p>
-                        <div class="text-right alinear-boton">
-                            <button type="submit" class="btn btn-primary boton-ovalo">Visualizar</button>
-                        </div>
-                    </div>
-                </div>
+        <div class="row p-2">
+            <div class="col-5">
+                <label for="" class="color-texto">Desde:</label>
+                <input type="date" name="" id="">
             </div>
-            <div class="row py-2">
-                <div class="col-6">
-                    <div class="fondo p-2">
-                        <div class="icono">
-                            <i class="fas fa-file-download"></i>
-                        </div>
-                        <h3 class="color-texto">Informe de asistencia</h3>
-                        <p class="color-texto">Aqui puedes descargar un informe de la asistencia de los obreros de la
-                            planta</p>
-                        <div class="text-right alinear-boton">
-                            <button type="submit" class="btn btn-primary boton-ovalo">Visualizar</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-5">
+                <label for="" class="color-texto">Hasta:</label>
+                <input type="date" name="" id="">
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-primary">Buscar</button>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 icono">
-                <i class="fas fa-file-download"></i>
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-secondary">Informe de asistencia</h3>
-                <p class="text-secondary">Aqui puedes descargar un informe de la asistencia de los obreros de la planta
-                </p>
-            </div>
-            <div class="col-md-3">
-                <button type="button" class="btn btn-primary">Visualizar</button>
+        <div class="container p-2">
+            <div class="col-12">
+                <table class="table table-dark">
+                    <thead>
+                        <th scope="col">No.</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Compañia</th>
+                        <th scope="col">Modificar</th>
+                        <th scope="col">Eliminar</th>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
