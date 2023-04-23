@@ -17,6 +17,7 @@ var opciones1 = {
     hour12: true
 };
 tdFecha.textContent = fechaActual.toLocaleString("es-MX", opciones1); // Escribe la fecha y hora en el elemento td
+
 var tdFecha = document.getElementById("fecha-actual_1");
 var opciones2 = {
     day: 'numeric',

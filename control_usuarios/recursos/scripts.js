@@ -1,8 +1,10 @@
 let id = sessionStorage.getItem("id"),
     nombre = sessionStorage.getItem("nombre"),
+
     compania = sessionStorage.getItem("compania"),
     idActualizar = null,
     idActualizarUser = null;
+
 if (id == null || id == "null") {
     alert("Ingresa para continuar")
     window.location = "..//..//index.html";
@@ -32,6 +34,7 @@ fetch(`http://localhost:5000/scmt/consultarAll?compania=` + compania, {
 function recuperar1(datos) {
     let contenido = document.getElementById("contenido")
     contenido.innerHTML = ''
+    let i = 1;
     for (let valor of datos.data) {
         let nombre = valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido
         let rol = null
@@ -51,7 +54,7 @@ function recuperar1(datos) {
         }
         contenido.innerHTML += `
         <tr>
-            <td>${valor.id}</td>
+            <td>${i++}</td>
             <td>${nombre}</td>
             <td>${rol}</td>
             <td>${valor.usuario}</td>
@@ -302,7 +305,6 @@ function insertarConductor(datos) {
     }
 }
 
-
 function insertarPasajero(datos) {
     let url = null;
     let fotografia = null;
@@ -434,7 +436,6 @@ function validar() {
         apellidoMM = true,
         usuarioo = true,
         contraseñaa = true;
-
     if (!/^[a-zA-Z ]+$/i.test(nombre.value) || nombre.value.length > 120 || nombre.value.length < 3) {
         nombre.style.border = "1px solid red";
         nombree = false;
