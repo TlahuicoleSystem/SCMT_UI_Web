@@ -133,11 +133,33 @@
 
         <!-- The Modal -->
         <div class="modal fade" id="myModal">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Agregar usuario nuevo</h4>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Agregar usuario nuevo</h4>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+              </div>
+              
+              <!-- Modal body -->
+              <div class="modal-body">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="" class="img-fluid imagen" id="imagen">
+                        </div>
+                        <div class="col-sm-9">
+                            <form id="form-imagen" >
+                                <label for="phone">Fotografia:</label>
+                                <input type="file" class="form-control-file border" name="image" id="image" accept=".jpg, .png, .jpeg" required>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                    <input type="hidden" class="form-control" id="rol"  name="rol">
+                    <input type="hidden" class="form-control" id="mode"  name="mode">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" required>
                     </div>
 
                     <!-- Modal body -->
@@ -306,18 +328,7 @@
                 </div>
             </div>
         </div>
-
-    </div>
-
-    <script>
-        $(document).ready(function () {
-            $("#myBtn").click(function () {
-                $("#myModal").modal();
-            });
-        });
-    </script>
-
-
+      </div>
     </div>
 
 
