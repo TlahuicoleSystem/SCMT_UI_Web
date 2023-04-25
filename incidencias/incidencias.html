@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Incidencias</title>
 
     <!--CDN-->
     <!-- Latest compiled and minified CSS -->
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Styles-->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="recursos/css/styles.css">
+    <link rel="stylesheet" href="../recursos/css/styles.css">
 
 </head>
 
@@ -37,7 +37,7 @@
 
             <ul class="nav">
                 <li>
-                    <a href="inicio.html">
+                    <a href="../inicio.html">
                         <i class='bx bx-grid'></i>
                         <span class="link_name">Inicio</span>
                     </a>
@@ -51,28 +51,28 @@
                     <span class="tooltip">Control de usuarios</span>
                 </li>
                 <li>
-                    <a href="ubicacion_unidades/unidades.html">
+                    <a href="/ubicacion_unidades/unidades.html">
                         <i class='bx bx-map'></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
                 </li>
                 <li>
-                    <a href="crear_rutas/rutas.html">
+                    <a href="/crear_rutas/rutas.html">
                         <i class='bx bxs-map-alt'></i>
                         <span class="link_name">Crear rutas</span>
                     </a>
                     <span class="tooltip">Crear rutas</span>
                 </li>
                 <li>
-                    <a href="informes/informes.html">
+                    <a href="/informes/informes.html">
                         <i class='bx bxs-archive'></i>
                         <span class="link_name">Informes</span>
                     </a>
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
-                    <a href="incidencias/incidencias.html">
+                    <a href="incidencias.html">
                         <i class='bx bxs-bookmark'></i>
                         <span class="link_name">Incidencias</span>
                     </a>
@@ -97,89 +97,46 @@
         </div>
     </nav>
 
-    <div class="container padding-container">
-        <div class="row align-content-center">
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Control de usuarios</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="control_usuarios/usuarios.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Ubicacion de unidades</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="ubicacion_unidades/unidades.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Crear rutas</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="crear_rutas/rutas.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
+    <div class="container py-4">
+        <div class="row py-2">
+            <div class="col-12">
+                <h1 class="color-texto">Reportes de incidencias</h1>
             </div>
         </div>
-
-        <div class="row align-content-center">
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Informes</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="informes/informes.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
+        <div class="row py-2">
+            <div class="col-3">
+                <select name="" id="" class="form-control">
+                    <option value="">Selecciona una ruta</option>
+                    <option value="">Soriana</option>
+                    <option value="">Zacatelco</option>
+                    <option value="">Xaltocan</option>
+                    <option value="">Apizaco</option>
+                    <option value="">Puebla</option>
+                </select>
             </div>
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Incidencias</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="incidencias/incidencias.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Otros</h4>
-                    </div>
-                    <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
-                    </div>
-                    <a href="#">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
-            </div>
+        </div>
+        <div class="py-2">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Juan Perez Rodriguez</td>
+                        <td id="fecha-actual_0"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Hugo Sanchez Juarez</td>
+                        <td id="fecha-actual_1"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 

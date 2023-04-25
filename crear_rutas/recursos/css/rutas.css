@@ -1,0 +1,11 @@
+.color-card {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.color-texto:hover {
+    color: #000000;
+}
+
+.color-texto:focus {
+    box-shadow: 0 0 0 0.2rem rgba(78, 205, 230, 0.75);
+}
