@@ -1,9 +1,9 @@
+.alineacion {
+    display: flex;
+    justify-content: flex-end;
+}
 .color-card {
     background-color: rgba(255, 255, 255, 0.3);
-}
-
-.color-texto:hover {
-    color: #000000;
 }
 
 .color-texto:focus {
