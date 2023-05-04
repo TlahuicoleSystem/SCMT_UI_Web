@@ -26,6 +26,19 @@ function entrar() {
 }
 
 function entrarRes(datos) {
+    let nombreCompleto =  null,
+        descripcion = null
+    if(datos.data.trol_id == 1){
+        descripcion = "Administrador"
+    }else{
+        if(datos.data.trol_id == 2){
+            descripcion = "Conductor"
+        }else{
+            if(datos.data.trol_id == 3){
+                descripcion = "Pasajero"
+            }
+        }
+    }
     if (datos.data == "") {
         alert("Lo sentimos contraseña o correo invalido")
         sessionStorage.setItem("cliente", null);
@@ -34,10 +47,14 @@ function entrarRes(datos) {
         if(datos.data.trol_id != 1){
             alert("Lo sentimos no puedes inciar sesion en web")
         }else{
+            nombreCompleto = datos.data.nombre + " " + datos.data.primer_apellido + " "+ datos.data.segundo_apellido
             console.log(datos.data)
             sessionStorage.setItem("id", datos.data.id);
-            sessionStorage.setItem("nombre", datos.data.nombre);
+            sessionStorage.setItem("nombre", nombreCompleto);
             sessionStorage.setItem("rol", datos.data.trol_id);
+            sessionStorage.setItem("telefono", datos.data.telefono);
+            sessionStorage.setItem("descripcion", descripcion);
+            sessionStorage.setItem("foto", datos.data.fotografia);
             sessionStorage.setItem("compania", datos.data.tcompania_id);
             alert("Bienvenido " + datos.data.nombre);
             window.location = "inicio.html";

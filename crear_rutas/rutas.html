@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="../recursos/css/styles.css">
     <link rel="stylesheet" href="/crear_rutas/recursos/css/rutas.css">
 
+    <script src="../recursos/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../recursos/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../recursos/sweetalert/sweetalert2.min.css">
+
 </head>
 
 <body class="fondo">
@@ -45,7 +49,7 @@
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
-                    <a href="/control_usuarios/usuarios.html">
+                    <a href="usuarios.html">
                         <i class='bx bxs-user-detail'></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
@@ -87,128 +91,89 @@
                     <span class="tooltip">Otros</span>
                 </li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
-                        <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
-                            class="img-fluid espaciado-img bx">
-                        <span class="link_name">Josue Barrales Galvez</span>
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id = "nombre_spam">
+                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
+                        <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
-                    <span class="tooltip">Josue Barrales Galvez</span>
+                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
     </nav>
-
     <div class="container py-4">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6">
                 <h1 class="color-texto">Control de rutas</h1>
+            </div>
+            <div class="col-6 align-items-center alineacion">
+                <button type="button" class="btn btn-info align-content-end" id="myBtn">Agregar ruta</button>
             </div>
         </div>
 
         <div class="accordion py-4" id="accordionExample">
-            <div class="card color-card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left color-texto" type="button"
-                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            Recorrido de la ruta Soriana
-                        </button>
-                    </h2>
-                </div>
+            <!--Se crea desde el JS de manera dinamica-->
+        </div>
 
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+
+
+
+
+
+        <div class="modal fade" id="ModalRuta">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Crear Ruta</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
                     </div>
-                </div>
-            </div>
-            <div class="card color-card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed color-texto" type="button"
-                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            Recorrido de la ruta Zacatelco
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <input type="hidden" class="form-control" id="mode" name="mode">
+                        <div class="form-group">
+                            <label for="nombre">Nombre de la ruta:</label>
+                            <input type="text" class="form-control" id="nombreR" placeholder="Ruta San Marcos" name="nombreR" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label for="punto_acceso">Punto principal de acceso:</label>
+                                    <input type="text" class="form-control" id="punto_acceso" placeholder="Apizaco" name="punto_acceso" required>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="vehiculo">Vehiculo:</label>
+                                    <input type="text" class="form-control" id="vehiculo" placeholder="XB-135-NM" name="vehiculo" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="sel1">Seleccionar conductor:</label>
+                            <select class="form-control" id="conductores">
+                              <option VALUE="link pagina 1" >Josue Barrales Galvez</option>
+                            </select>
+                          </div>
+                        <div class="form-group">
+                            <label for="descripcionR">Descripcion:</label>
+                            <textarea class="form-control" rows="3" id="descripcionR" name="descripcionR"></textarea>
+                        </div>
+                        <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
                     </div>
-                </div>
-            </div>
-            <div class="card color-card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed color-texto" type="button"
-                            data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                            aria-controls="collapseThree">
-                            Recorrido de la ruta Xaltocan
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="card color-card">
-                <div class="card-header" id="headingfour">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed color-texto" type="button"
-                            data-toggle="collapse" data-target="#collapsefour" aria-expanded="false"
-                            aria-controls="collapsefour">
-                            Recorrido de la ruta Apizaco
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="card color-card">
-                <div class="card-header" id="headingfive">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left collapsed color-texto" type="button"
-                            data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
-                            aria-controls="collapseFive">
-                            Recorrido de la ruta Puebla
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseFive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
     </div>
 
     <!-- Modal Perfil-->
@@ -225,13 +190,9 @@
                 <div class="modal-body fondo borde">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
-                                class="img-fluid img-redondo">
+                            <img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid img-redondo foto_perfil">
                         </div>
-                        <div class="col-8 color-texto">
-                            <p>Nombre: Josue Barrales Galvez</p>
-                            <p>Descripcion: Administrador</p>
-                            <p>Telefono: 2761163782</p>
+                        <div class="col-8 color-texto "id="nombreMenu">
                         </div>
                     </div>
                 </div>
@@ -244,6 +205,7 @@
     </div>
 
     <script src="/recursos/js/inicio.js"></script>
+    <script src="recursos/scripts.js"></script>
 </body>
 
 </html>
