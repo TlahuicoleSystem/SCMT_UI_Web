@@ -44,7 +44,7 @@
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
-                    <a href="/control_usuarios/usuarios.html">
+                    <a href="usuarios.html">
                         <i class='bx bxs-user-detail'></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
@@ -72,7 +72,7 @@
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
-                    <a href="incidencias.html">
+                    <a href="/incidencias/incidencias.html">
                         <i class='bx bxs-bookmark'></i>
                         <span class="link_name">Incidencias</span>
                     </a>
@@ -86,12 +86,11 @@
                     <span class="tooltip">Otros</span>
                 </li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
-                        <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
-                            class="img-fluid espaciado-img bx">
-                        <span class="link_name">Josue Barrales Galvez</span>
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
+                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
+                            <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
-                    <span class="tooltip">Josue Barrales Galvez</span>
+                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
@@ -105,14 +104,12 @@
         </div>
         <div class="row py-2">
             <div class="col-3">
-                <select name="" id="" class="form-control">
-                    <option value="">Selecciona una ruta</option>
-                    <option value="">Soriana</option>
-                    <option value="">Zacatelco</option>
-                    <option value="">Xaltocan</option>
-                    <option value="">Apizaco</option>
-                    <option value="">Puebla</option>
+                <select name="" id="listaRutas" class="form-control">
+
                 </select>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary" onclick="buscarRutas();">Buscar</button>
             </div>
         </div>
         <div class="py-2">
@@ -122,19 +119,11 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Fecha</th>
+                        <th scope="col">Visualizar</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Juan Perez Rodriguez</td>
-                        <td id="fecha-actual_0"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Hugo Sanchez Juarez</td>
-                        <td id="fecha-actual_1"></td>
-                    </tr>
+                <tbody id="incidencias">
+
                 </tbody>
             </table>
         </div>
@@ -154,13 +143,10 @@
                 <div class="modal-body fondo borde">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
-                                class="img-fluid img-redondo">
+                            <img src="" alt="Imagen de perfil" id="foto_perfil"
+                                class="img-fluid img-redondo foto_perfil">
                         </div>
-                        <div class="col-8 color-texto">
-                            <p>Nombre: Josue Barrales Galvez</p>
-                            <p>Descripcion: Administrador</p>
-                            <p>Telefono: 2761163782</p>
+                        <div class="col-8 color-texto " id="nombreMenu">
                         </div>
                     </div>
                 </div>
@@ -172,7 +158,28 @@
         </div>
     </div>
 
+    <!-- Modal Visualizar Incidencias-->
+    <div class="modal fade" id="ModalDescripcion">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Descripcion</h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <textarea class="form-control" rows="2" id="descripcion" name="descripcion"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/recursos/js/inicio.js"></script>
+    <script src="recursos/scripts.js"></script>
 </body>
 
 </html>
