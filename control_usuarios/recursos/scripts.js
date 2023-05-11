@@ -1,17 +1,12 @@
 let id = sessionStorage.getItem("id"),
-    nombre = sessionStorage.getItem("nombre"),
-
-    compania = sessionStorage.getItem("compania"),
-    idActualizar = null,
-    idActualizarUser = null;
+    compania = sessionStorage.getItem("compania");
+let idActualizar = null
+let idActualizarUser = null
 
 if (id == null || id == "null") {
     alert("Ingresa para continuar")
     window.location = "..//..//index.html";
-} else {
-    //document.getElementById("nombreNav").innerHTML = `<p>Hola ${nombre}</p>`
 }
-
 $(document).ready(function () {
     $("#myBtn").click(function () {
         $("#myModal").modal();

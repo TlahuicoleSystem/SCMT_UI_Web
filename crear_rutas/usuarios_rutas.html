@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incidencias</title>
+    <title>Control de Rutas</title>
 
     <!--CDN-->
     <!-- Latest compiled and minified CSS -->
@@ -21,6 +21,11 @@
     <!--Styles-->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../recursos/css/styles.css">
+    <link rel="stylesheet" href="/crear_rutas/recursos/css/rutas.css">
+
+    <script src="../recursos/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../recursos/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../recursos/sweetalert/sweetalert2.min.css">
 
 </head>
 
@@ -86,46 +91,59 @@
                     <span class="tooltip">Otros</span>
                 </li>
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id = "nombre_spam">
                         <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
-                            <span class="link_name">Josue Barrales Galvez</span>-->
+                        <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
                     <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
     </nav>
-
     <div class="container py-4">
-        <div class="row py-2">
-            <div class="col-12">
-                <h1 class="color-texto">Reportes de incidencias</h1>
+        <div class="row">
+            <div class="col-6">
+                <h1 class="color-texto">Control pasajeros en ruta</h1>
+            </div>
+            <div class="col-6 align-items-center alineacion">
+                <button type="button" class="btn btn-info align-content-end" id="myBtn">Agregar pasajeros</button>
             </div>
         </div>
-        <div class="row py-2">
-            <div class="col-3">
-                <select name="" id="listaRutas" class="form-control">
-
-                </select>
-            </div>
-            <div class="col-3">
-                <button type="button" class="btn btn-primary" onclick="buscarRutas();">Buscar</button>
-            </div>
-        </div>
-        <div class="py-2">
+        <div class="py-4">
             <table class="table table-dark">
                 <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Visualizar</th>
-                    </tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Eliminar</th>
                 </thead>
-                <tbody id="incidencias">
-
+                <tbody id="contenido">
                 </tbody>
             </table>
+        </div>
+
+        <div class="modal fade" id="ModalRuta">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Agregar Pasajeros</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="sel1">Selecciona el pasajero:</label>
+                            <select class="form-control" id="pasajeros">
+                            </select>
+                          </div>
+                        <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -143,10 +161,9 @@
                 <div class="modal-body fondo borde">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <img src="" alt="Imagen de perfil" id="foto_perfil"
-                                class="img-fluid img-redondo foto_perfil">
+                            <img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid img-redondo foto_perfil">
                         </div>
-                        <div class="col-8 color-texto " id="nombreMenu">
+                        <div class="col-8 color-texto "id="nombreMenu">
                         </div>
                     </div>
                 </div>
@@ -158,28 +175,8 @@
         </div>
     </div>
 
-    <!-- Modal Visualizar Incidencias-->
-    <div class="modal fade" id="ModalDescripcion">
-        <div class="modal-dialog  modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Descripcion</h4>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <textarea class="form-control" rows="2" id="descripcion" name="descripcion"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="/recursos/js/inicio.js"></script>
-    <script src="recursos/scripts.js"></script>
+    <script src="recursos/usuarios.js"></script>
 </body>
 
 </html>
