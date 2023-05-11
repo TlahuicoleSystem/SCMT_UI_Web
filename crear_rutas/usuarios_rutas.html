@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Rutas</title>
+
+    <!--CDN-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Iconos-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Styles-->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../recursos/css/styles.css">
+    <link rel="stylesheet" href="/crear_rutas/recursos/css/rutas.css">
+
+    <script src="../recursos/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="../recursos/sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../recursos/sweetalert/sweetalert2.min.css">
+
+</head>
+
+<body class="fondo">
+    <nav>
+        <div class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <i class='bx bxs-truck'></i>
+                    <div class="logo_name">SCMT</div>
+                </div>
+                <i class='bx bx-menu' id='btn'></i>
+            </div>
+
+            <ul class="nav">
+                <li>
+                    <a href="../inicio.html">
+                        <i class='bx bx-grid'></i>
+                        <span class="link_name">Inicio</span>
+                    </a>
+                    <span class="tooltip">Inicio</span>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <i class='bx bxs-user-detail'></i>
+                        <span class="link_name">Control de usuarios</span>
+                    </a>
+                    <span class="tooltip">Control de usuarios</span>
+                </li>
+                <li>
+                    <a href="/ubicacion_unidades/unidades.html">
+                        <i class='bx bx-map'></i>
+                        <span class="link_name">Ubicacion de unidades</span>
+                    </a>
+                    <span class="tooltip">Ubicacion de unidades</span>
+                </li>
+                <li>
+                    <a href="/crear_rutas/rutas.html">
+                        <i class='bx bxs-map-alt'></i>
+                        <span class="link_name">Crear rutas</span>
+                    </a>
+                    <span class="tooltip">Crear rutas</span>
+                </li>
+                <li>
+                    <a href="/informes/informes.html">
+                        <i class='bx bxs-archive'></i>
+                        <span class="link_name">Informes</span>
+                    </a>
+                    <span class="tooltip">Informes</span>
+                </li>
+                <li>
+                    <a href="/incidencias/incidencias.html">
+                        <i class='bx bxs-bookmark'></i>
+                        <span class="link_name">Incidencias</span>
+                    </a>
+                    <span class="tooltip">Incidencias</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-building'></i>
+                        <span class="link_name">Otros</span>
+                    </a>
+                    <span class="tooltip">Otros</span>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id = "nombre_spam">
+                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
+                        <span class="link_name">Josue Barrales Galvez</span>-->
+                    </a>
+                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="color-texto">Control pasajeros en ruta</h1>
+            </div>
+            <div class="col-6 align-items-center alineacion">
+                <button type="button" class="btn btn-info align-content-end" id="myBtn">Agregar pasajeros</button>
+            </div>
+        </div>
+        <div class="py-4">
+            <table class="table table-dark">
+                <thead>
+                    <th scope="col">No.</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Eliminar</th>
+                </thead>
+                <tbody id="contenido">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modal fade" id="ModalRuta">
+            <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Agregar Pasajeros</h4>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="sel1">Selecciona el pasajero:</label>
+                            <select class="form-control" id="pasajeros">
+                            </select>
+                          </div>
+                        <button type="button" onclick="guardar();" class="btn btn-primary">Guardar cambios</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Perfil-->
+    <div class="modal fade" id="modal-Perfil" tabindex="-1" role="dialog" aria-labelledby="modal-Perfil-titulo"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header fondo borde">
+                    <h5 class="modal-title color-texto" id="modal-Perfil-titulo">Perfil</h5>
+                    <button type="button" class="close color-texto" data-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body fondo borde">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-4">
+                            <img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid img-redondo foto_perfil">
+                        </div>
+                        <div class="col-8 color-texto "id="nombreMenu">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer fondo borde">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar Sesion</button>
+                    <!-- <button type="button" class="btn btn-primary">Guardar cambios</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/recursos/js/inicio.js"></script>
+    <script src="recursos/usuarios.js"></script>
+</body>
+
+</html>

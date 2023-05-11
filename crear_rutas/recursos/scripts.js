@@ -56,7 +56,8 @@ function recuperar1(datos) {
                                 <p>${nombre}</p>
                                 <div class="btn-group ">
                                     <button type="button" onclick="eliminar('${valor.id}');" class="btn btn-danger mr-2">Eliminar ruta</button>
-                                    <button type="button" onclick="actualizar('${valor.id}');"class="btn btn-primary">Editar ruta</button>
+                                    <button type="button" onclick="actualizar('${valor.id}');"class="btn btn-primary mr-2">Editar ruta</button>
+                                    <a href="usuarios_rutas.html?codigo=${valor.id}"> <button type="button"class="btn btn-success ">Pasajeros de la ruta</button> </a>
                                 </div>                   
                             </div>
                         </div> 
@@ -67,13 +68,6 @@ function recuperar1(datos) {
         i++;
     }
 }
-
-
-
-
-
-
-
 
 function actualizar(id) {
     fetch(`http://localhost:5000/scmt/consultarRuta?id=` + id, {
@@ -259,7 +253,6 @@ function validaciones(){
         nombreR.style.border = "1px solid red";
         name = false;
     }
-
     if (!/^[a-zA-Z0-9 ]+$/.test(punto_acceso.value) || punto_acceso.value.length > 45 || punto_acceso.value.length < 2) {
         punto_acceso.style.border = "1px solid red";
         punto_accesoo = false;
