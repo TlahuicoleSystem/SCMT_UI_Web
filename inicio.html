@@ -37,61 +37,60 @@
 
             <ul class="nav">
                 <li>
-                    <a href="inicio.html">
+                    <a href="../inicio.html">
                         <i class='bx bx-grid'></i>
                         <span class="link_name">Inicio</span>
                     </a>
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
-                    <a href="/control_usuarios/usuarios.html">
+                    <a href="control_usuarios/usuarios.html">
                         <i class='bx bxs-user-detail'></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
                     <span class="tooltip">Control de usuarios</span>
                 </li>
                 <li>
-                    <a href="ubicacion_unidades/unidades.html">
+                    <a href="/ubicacion_unidades/unidades.html">
                         <i class='bx bx-map'></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
                 </li>
                 <li>
-                    <a href="crear_rutas/rutas.html">
+                    <a href="/crear_rutas/rutas.html">
                         <i class='bx bxs-map-alt'></i>
                         <span class="link_name">Crear rutas</span>
                     </a>
                     <span class="tooltip">Crear rutas</span>
                 </li>
                 <li>
-                    <a href="informes/informes.html">
+                    <a href="/informes/informes.html">
                         <i class='bx bxs-archive'></i>
                         <span class="link_name">Informes</span>
                     </a>
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
-                    <a href="incidencias/incidencias.html">
+                    <a href="/incidencias/incidencias.html">
                         <i class='bx bxs-bookmark'></i>
                         <span class="link_name">Incidencias</span>
                     </a>
                     <span class="tooltip">Incidencias</span>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <i class='bx bxs-building'></i>
                         <span class="link_name">Otros</span>
                     </a>
                     <span class="tooltip">Otros</span>
-                </li>
+                </li> -->
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
-                        <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
-                            class="img-fluid espaciado-img bx">
-                        <span class="link_name">Josue Barrales Galvez</span>
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
+                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
+                            <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
-                    <span class="tooltip">Josue Barrales Galvez</span>
+                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
@@ -167,7 +166,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-4">
+            <!-- <div class="col-4">
                 <div class="card transparencia m-3 p-2">
                     <div class="card-header">
                         <h4 class="color-texto">Otros</h4>
@@ -179,7 +178,7 @@
                         <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -197,13 +196,10 @@
                 <div class="modal-body fondo borde">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
-                                class="img-fluid img-redondo">
+                            <img src="" alt="Imagen de perfil" id="foto_perfil"
+                                class="img-fluid img-redondo foto_perfil">
                         </div>
-                        <div class="col-8 color-texto">
-                            <p>Nombre: Josue Barrales Galvez</p>
-                            <p>Descripcion: Administrador</p>
-                            <p>Telefono: 2761163782</p>
+                        <div class="col-8 color-texto " id="nombreMenu">
                         </div>
                     </div>
                 </div>
@@ -215,7 +211,7 @@
         </div>
     </div>
 
-    <script src="/recursos/js/inicio.js"></script>
+    <script src="recursos/js/inicio.js"></script>
 </body>
 
 </html>
