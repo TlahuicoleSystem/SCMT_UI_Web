@@ -26,7 +26,7 @@ function incidencias() {
 
     let titulo = document.getElementById('titulo');
     titulo.innerHTML = `
-    <h1 class="color-texto">Informe de: incidencias</h1>
+    <h1 class="color-texto">Informe de incidencias</h1>
     `;
 
     let tableincidencias = document.getElementById("table");
@@ -34,10 +34,11 @@ function incidencias() {
     <table class="table table-dark">
         <thead>
             <th scope="col">No.</th>
-            <th scope="col">Nombre</th>
+            <th scope="col">Nombre del conductor</th>
+            <th scope="col">Incidencia</th>
             <th scope="col">Ruta</th>
-            <th scope="col">Lugar</th>
             <th scope="col">Descripcion</th>
+            <th scope="col">Fecha/Hora</th>
         </thead>
         <tbody id="contenido">
 
@@ -54,7 +55,7 @@ function rutas() {
 
     let titulo = document.getElementById('titulo');
     titulo.innerHTML = `
-    <h1 class="color-texto">Informe de: rutas</h1>
+    <h1 class="color-texto">Informe de rutas</h1>
     `;
 
     let tablerutas = document.getElementById("table");
@@ -80,7 +81,7 @@ function asistencia() {
 
     let titulo = document.getElementById('titulo');
     titulo.innerHTML = `
-    <h1 class="color-texto">Informe de: asistencia</h1>
+    <h1 class="color-texto">Informe de asistencia</h1>
     `;
 
     let tableasistencia = document.getElementById("table");
@@ -103,17 +104,18 @@ function asistencia() {
 
 function cargar(tipo) {
     console.log(tipo);
+    let inicio = document.getElementById("inicio").value
+    let fin = document.getElementById("fin").value
     let url = null;
     switch (tipo) {
         case 1:
-            url = ""
-
+            url = "http://localhost:5000/scmt/consultarInformeIncidencia?inicio=" + inicio + "&fin=" + fin;
             break;
         case 2:
             url = ""
             break;
         case 3:
-            url = ""
+            url = "http://localhost:5000/scmt/consultarInformeAsistencia?inicio=" + inicio + "&fin=" + fin;
             break;
 
         default:
@@ -133,44 +135,50 @@ function cargar(tipo) {
 }
 
 function recuperar(datos, tipo) {
+    let i = 1;
     let contenido = document.getElementById("contenido")
     contenido.innerHTML = ''
     switch (tipo) {
         case 1:
             for (let valor of datos.data) {
                 contenido.innerHTML += `
-        <tr>
-            <td></td> //No
-            <td></td> //Nombre
-            <td></td> //Ruta
-            <td></td> //Lugar
-            <td></td> //Descripcion
-        </tr>
-    `;
+                <tr>
+                    <td>${i++}</td>
+                    <td>${valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido}</td>
+                    <td>${valor.nombre_incidente}</td>
+                    <td>${valor.nombre_ruta}</td>
+                    <td>${valor.descripcion}</td>
+                    <td>${valor.fecha + " " + valor.hora}
+                </tr>
+            `;
             }
             break;
 
         case 2:
-            contenido.innerHTML += `
-        <tr>
-            <td></td> //No
-            <td></td> //Ruta
-            <td></td> //Conductor
-        </tr>
-    `;
+            for (let valor of datos.data) {
+                contenido.innerHTML += `
+                <tr>
+                    <td></td> //No
+                    <td></td> //Ruta
+                    <td></td> //Conductor
+                </tr>
+            `;
+            }
             break;
 
         case 3:
-            contenido.innerHTML += `
-        <tr>
-            <td></td> //No
-            <td></td> //Nombre
-            <td></td> //Area
-            <td></td> //Jefe inmediato
-            <td></td> //Ruta
-            <td></td> //Fecha/Hora
-        </tr>
-    `;
+            for (let valor of datos.data) {
+                contenido.innerHTML += `
+                <tr>
+                    <td>${i++}</td>
+                    <td>${valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido}</td>
+                    <td>${valor.area}</td>
+                    <td>${valor.jefe_inmediato}</td>
+                    <td>${valor.nombre_ruta}</td>
+                    <td>${valor.fecha + " " + valor.hora}</td>
+                </tr>
+            `;
+            }
             break;
 
         default:
