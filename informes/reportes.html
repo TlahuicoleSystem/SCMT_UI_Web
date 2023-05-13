@@ -80,20 +80,19 @@
                     </a>
                     <span class="tooltip">Incidencias</span>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#">
                         <i class='bx bxs-building'></i>
                         <span class="link_name">Otros</span>
                     </a>
                     <span class="tooltip">Otros</span>
-                </li>
+                </li> -->
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#modal-Perfil">
-                        <img src="https://via.placeholder.com/32" alt="Imagen de perfil"
-                            class="img-fluid espaciado-img bx">
-                        <span class="link_name">Josue Barrales Galvez</span>
+                    <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
+                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
+                                                <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
-                    <span class="tooltip">Josue Barrales Galvez</span>
+                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
@@ -110,11 +109,11 @@
         <div class="row p-2">
             <div class="col-5">
                 <label for="" class="color-texto">Desde:</label>
-                <input type="date" name="buscar_inicio" id="buscar_inicio">
+                <input type="date" name="inicio" id="inicio">
             </div>
             <div class="col-5">
                 <label for="" class="color-texto">Hasta:</label>
-                <input type="date" name="buscar_fin" id="buscar_fin">
+                <input type="date" name="fin" id="fin">
             </div>
             <div class="col-2" id="buscar">
 
@@ -141,13 +140,10 @@
                 <div class="modal-body fondo borde">
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
-                            <img src="https://via.placeholder.com/500" alt="Imagen de perfil"
-                                class="img-fluid img-redondo">
+                            <img src="" alt="Imagen de perfil" id="foto_perfil"
+                                class="img-fluid img-redondo foto_perfil">
                         </div>
-                        <div class="col-8 color-texto">
-                            <p>Nombre: Josue Barrales Galvez</p>
-                            <p>Descripcion: Administrador</p>
-                            <p>Telefono: 2761163782</p>
+                        <div class="col-8 color-texto " id="nombreMenu">
                         </div>
                     </div>
                 </div>
@@ -161,6 +157,7 @@
 
     <script src="/recursos/js/inicio.js"></script>
     <script src="recursos/js/reportes.js"></script>
+    <script src="recursos/js/informes.js"></script>
 </body>
 
 </html>
