@@ -37,58 +37,51 @@
 
             <ul class="nav">
                 <li>
-                    <a href="../inicio.html">
+                    <a href="../inicio.html" id="inicioLink">
                         <i class='bx bx-grid'></i>
                         <span class="link_name">Inicio</span>
                     </a>
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
-                    <a href="control_usuarios/usuarios.html">
+                    <a href="../control_usuarios/usuarios.html" id="controlUsuariosLink">
                         <i class='bx bxs-user-detail'></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
                     <span class="tooltip">Control de usuarios</span>
                 </li>
                 <li>
-                    <a href="/ubicacion_unidades/unidades.html">
+                    <a href="../ubicacion_unidades/unidades.html" id="ubicacionUnidadesLink">
                         <i class='bx bx-map'></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
                 </li>
                 <li>
-                    <a href="/crear_rutas/rutas.html">
+                    <a href="../crear_rutas/rutas.html" id="crearRutasLink">
                         <i class='bx bxs-map-alt'></i>
                         <span class="link_name">Crear rutas</span>
                     </a>
                     <span class="tooltip">Crear rutas</span>
                 </li>
                 <li>
-                    <a href="/informes/informes.html">
+                    <a href="../informes/informes.html" id="informesLink">
                         <i class='bx bxs-archive'></i>
                         <span class="link_name">Informes</span>
                     </a>
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
-                    <a href="/incidencias/incidencias.html">
+                    <a href="../incidencias/incidencias.html" id="incidenciasLink">
                         <i class='bx bxs-bookmark'></i>
                         <span class="link_name">Incidencias</span>
                     </a>
                     <span class="tooltip">Incidencias</span>
                 </li>
-                <!-- <li>
-                    <a href="#">
-                        <i class='bx bxs-building'></i>
-                        <span class="link_name">Otros</span>
-                    </a>
-                    <span class="tooltip">Otros</span>
-                </li> -->
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
-                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
-                            <span class="link_name">Josue Barrales Galvez</span>-->
+                        <!--<img src="" alt="Imagen de perfil" id="foto_perfil" class="img-fluid espaciado-img bx">
+                    <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
                     <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
@@ -204,8 +197,7 @@
                     </div>
                 </div>
                 <div class="modal-footer fondo borde">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar Sesion</button>
-                    <!-- <button type="button" class="btn btn-primary">Guardar cambios</button> -->
+                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
                 </div>
             </div>
         </div>
