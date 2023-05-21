@@ -121,6 +121,11 @@
     line-height: 50px;
 }
 
+.sidebar ul li .nav-selected {
+    background-color: #ffffff;
+    color: #0b2997;
+}
+
 .sidebar ul li a {
     color: #b3b3b3;
     display: flex;

@@ -33,3 +33,30 @@ function cerrarSesion() {
     // Redirigir a la página de inicio de sesión
     window.location.href = "../index.html";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén la ruta completa de la página actual
+    let currentPath = window.location.pathname;
+
+    // Extrae el nombre del archivo de la ruta de la página actual
+    currentPath = currentPath.split("/").pop();
+
+    // Obtén todos los enlaces de navegación
+    let navLinks = document.querySelectorAll(".nav a");
+
+    // Recorre los enlaces y verifica si el nombre del archivo coincide con la página actual
+    for (let i = 0; i < navLinks.length; i++) {
+        let link = navLinks[i];
+        let href = link.getAttribute("href");
+        console.log(href, currentPath);
+
+        // Extrae el nombre del archivo de la ruta del enlace de navegación
+        href = href.split("/").pop();
+
+        // Verifica si el nombre del archivo coincide con el de la página actual
+        if (href === currentPath) {
+            link.classList.add("nav-selected");
+            break; // Detén el bucle una vez que se encuentre el enlace correspondiente
+        }
+    }
+});
