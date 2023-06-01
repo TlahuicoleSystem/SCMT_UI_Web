@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 });
 
-fetch(`http://localhost:5000/scmt/consultarAll?compania=` + compania, {
+fetch(`https://scmtapis.azurewebsites.net/scmt/consultarAll?compania=` + compania, {
     method: 'GET'
 })
     .then(res => res.json())
@@ -84,7 +84,7 @@ $(document).ready(function () {
 
 function actualizar(id) {
     idActualizarUser = id;
-    fetch(`http://localhost:5000/scmt/consultarUsuario?id=` + id, {
+    fetch(`https://scmtapis.azurewebsites.net/scmt/consultarUsuario?id=` + id, {
         method: 'GET'
     })
         .then(res => res.json())
@@ -152,7 +152,7 @@ function guardar() {
     if (document.getElementById('image').value == "") {
         procesar(image)
     } else {
-        fetch(`http://localhost:5000/scmt/insertarI`, {
+        fetch(`https://scmtapis.azurewebsites.net/scmt/insertarI`, {
             method: 'POST',
             //headers: { 'Content-Type': 'multipart/form-data' },
             body: imagen
@@ -212,11 +212,11 @@ function insertarAdmin(datos) {
     let fotografia = null;
     if (document.getElementById("mode").value == 1) {
         console.log("Entro en el actualizar del admin")
-        url = "http://localhost:5000/scmt/actualizarAdmin?id=" + idActualizar;
+        url = "https://scmtapis.azurewebsites.net/scmt/actualizarAdmin?id=" + idActualizar;
         fotografia = datos;
     } else {
         console.log("Entro en el insertra del admin")
-        url = "http://localhost:5000/scmt/insertarAdmin";
+        url = "https://scmtapis.azurewebsites.net/scmt/insertarAdmin";
         fotografia = datos.data;
     }
     descripcion_admin = document.getElementById("descripcion_admin").value;
@@ -257,10 +257,10 @@ function insertarConductor(datos) {
     let url = null;
     let fotografia = null;
     if (document.getElementById("mode").value == 1) {
-        url = "http://localhost:5000/scmt/actualizarConductor?id=" + idActualizar;
+        url = "https://scmtapis.azurewebsites.net/scmt/actualizarConductor?id=" + idActualizar;
         fotografia = datos;
     } else {
-        url = "http://localhost:5000/scmt/insertarConductor";
+        url = "https://scmtapis.azurewebsites.net/scmt/insertarConductor";
         fotografia = datos.data;
     }
     id_empleado_conductor = document.getElementById("id_empleado_conductor").value,
@@ -304,10 +304,10 @@ function insertarPasajero(datos) {
     let url = null;
     let fotografia = null;
     if (document.getElementById("mode").value == 1) {
-        url = "http://localhost:5000/scmt/actualizarPasajero?id=" + idActualizar;
+        url = "https://scmtapis.azurewebsites.net/scmt/actualizarPasajero?id=" + idActualizar;
         fotografia = datos;
     } else {
-        url = "http://localhost:5000/scmt/insertarPasajero";
+        url = "https://scmtapis.azurewebsites.net/scmt/insertarPasajero";
         fotografia = datos.data;
     }
     id_pasajero = document.getElementById("id_pasajero").value,
@@ -358,7 +358,7 @@ function insertarUsuario(datos) {
         contraseña = document.getElementById("contraseña").value;
     const cuerpo = new URLSearchParams("tcompania_id=" + compania);
     if (document.getElementById("mode").value == 1) {
-        url = "http://localhost:5000/scmt/actualizarUsuario?id=" + idActualizarUser;
+        url = "https://scmtapis.azurewebsites.net/scmt/actualizarUsuario?id=" + idActualizarUser;
         cuerpo.append("trol_id", document.getElementById("rol").value);
         switch (document.getElementById("rol").value) {
             case "1":
@@ -374,7 +374,7 @@ function insertarUsuario(datos) {
     } else {
         let seleccion = document.querySelector('input[name="bill"]:checked').value;
         console.log(datos.data);
-        url = "http://localhost:5000/scmt/insertarUsuario";
+        url = "https://scmtapis.azurewebsites.net/scmt/insertarUsuario";
         cuerpo.append("trol_id", seleccion);
         switch (seleccion) {
             case "1":
@@ -601,7 +601,7 @@ function eliminar(id) {
         confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/scmt/eliminarUsuario?id=` + id, {
+            fetch(`https://scmtapis.azurewebsites.net/scmt/eliminarUsuario?id=` + id, {
                 method: 'GET'
             })
                 .then(res => res.json())

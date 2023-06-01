@@ -45,6 +45,16 @@ function incidencias() {
         </tbody>
     </table>
     `;
+
+    let botonVisualizar = document.getElementById('boton-visualizar');
+    botonVisualizar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="generarPDFIncidencias()">Visualizar PDF</button>
+    `;
+
+    let botonDescargar = document.getElementById('boton-descargar');
+    botonDescargar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="descargarPDFIncidencia()">Descargar PDF</button>
+    `;
 }
 
 function rutas() {
@@ -70,6 +80,16 @@ function rutas() {
 
         </tbody>
     </table>
+    `;
+
+    let botonVisualizar = document.getElementById('boton-visualizar');
+    botonVisualizar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="generarPDFRutas()">Visualizar PDF</button>
+    `;
+
+    let botonDescargar = document.getElementById('boton-descargar');
+    botonDescargar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="descargarPDFRutas()">Descargar PDF</button>
     `;
 }
 
@@ -100,6 +120,16 @@ function asistencia() {
         </tbody>
     </table>
     `;
+
+    let botonVisualizar = document.getElementById('boton-visualizar');
+    botonVisualizar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="generarPDFAsistencia()">Visualizar PDF</button>
+    `;
+
+    let botonDescargar = document.getElementById('boton-descargar');
+    botonDescargar.innerHTML = `
+    <button type="button" class="btn btn-success" onclick="descargarPDFAsistencia()">Descargar PDF</button>
+    `;
 }
 
 function cargar(tipo) {
@@ -109,13 +139,13 @@ function cargar(tipo) {
     let url = null;
     switch (tipo) {
         case 1:
-            url = "http://localhost:5000/scmt/consultarInformeIncidencia?inicio=" + inicio + "&fin=" + fin;
+            url = "https://scmtapis.azurewebsites.net/scmt/consultarInformeIncidencia?inicio=" + inicio + "&fin=" + fin;
             break;
         case 2:
             url = ""
             break;
         case 3:
-            url = "http://localhost:5000/scmt/consultarInformeAsistencia?inicio=" + inicio + "&fin=" + fin;
+            url = "https://scmtapis.azurewebsites.net/scmt/consultarInformeAsistencia?inicio=" + inicio + "&fin=" + fin;
             break;
 
         default:
@@ -148,7 +178,7 @@ function recuperar(datos, tipo) {
                     <td>${valor.nombre_incidente}</td>
                     <td>${valor.nombre_ruta}</td>
                     <td>${valor.descripcion}</td>
-                    <td>${valor.fecha + " " + valor.hora}
+                    <td>${valor.fecha.slice(0, 10) + " " + valor.hora}
                 </tr>
             `;
             }
@@ -175,7 +205,7 @@ function recuperar(datos, tipo) {
                     <td>${valor.area}</td>
                     <td>${valor.jefe_inmediato}</td>
                     <td>${valor.nombre_ruta}</td>
-                    <td>${valor.fecha + " " + valor.hora}</td>
+                    <td>${valor.fecha.slice(0, 10) + " " + valor.hora}</td>
                 </tr>
             `;
             }

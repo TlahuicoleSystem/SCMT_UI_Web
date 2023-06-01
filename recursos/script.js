@@ -7,7 +7,7 @@ function entrar() {
         const cuerpo = new URLSearchParams("usuario=" + usuario);
         cuerpo.append('contraseña', contraseña);
         console.log(cuerpo)
-        fetch(`http://localhost:5000/scmt/consultarU`, {
+        fetch(`https://scmtapis.azurewebsites.net/scmt/consultarU`, {
                 method: 'POST',
                 //headers: { 'Content-Type': 'multipart/form-data' },
                 body: cuerpo

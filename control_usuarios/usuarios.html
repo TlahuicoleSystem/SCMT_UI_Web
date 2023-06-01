@@ -128,16 +128,16 @@
     </div>
     <div class="container mt-3">
         <!-- The Modal -->
-        <div class="modal fade" id="myModal">
+        <div class="modal fade color-texto" id="myModal">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header fondo borde">
                         <h4 class="modal-title">Agregar usuario nuevo</h4>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <button type="button" class="close color-texto" data-dismiss="modal">×</button>
                     </div>
 
                     <!-- Modal body -->
-                    <div class="modal-body">
+                    <div class="modal-body fondo borde">
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-3">
@@ -146,8 +146,8 @@
                                 <div class="col-sm-9">
                                     <form id="form-imagen">
                                         <label for="phone">Fotografia:</label>
-                                        <input type="file" class="form-control-file border" name="image" id="image"
-                                            accept=".jpg, .png, .jpeg" required>
+                                        <input type="file" class="form-control-file border fondo-blanco" name="image"
+                                            id="image" accept=".jpg, .png, .jpeg" required>
                                     </form>
                                 </div>
                             </div>
@@ -249,11 +249,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <button type="button" onclick="guardar();" class="btn btn-primary">Guardar
+                                cambios</button>
 
-                            <div class="col text-center">
-                                <button type="button" onclick="guardar();" class="btn btn-primary">Guardar
-                                    cambios</button>
-                            </div>
 
                         </div>
                         <div id="pasajero" style="display:none;">
@@ -296,7 +294,7 @@
 
 
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer fondo borde">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                     </div>
 
@@ -329,8 +327,7 @@
                     </div>
                 </div>
                 <div class="modal-footer fondo borde">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar Sesion</button>
-                    <!-- <button type="button" class="btn btn-primary">Guardar cambios</button> -->
+                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
                 </div>
             </div>
         </div>
