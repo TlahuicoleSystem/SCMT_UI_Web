@@ -48,7 +48,7 @@ function listarIncidencias(datos) {
             <tr>
                 <td>${valor.id}</td>
                 <td>${valor.nombre}</td>
-                <td>${valor.fecha + ' ' + valor.hora}</td>
+                <td>${valor.fecha.slice(0, 10) + ' ' + valor.hora}</td>
                 <td><button type="button" onclick="visualizar('${valor.descripcion}');" class="btn btn-success mr-2">Visualizar</button></td>
             </tr>
         `;
