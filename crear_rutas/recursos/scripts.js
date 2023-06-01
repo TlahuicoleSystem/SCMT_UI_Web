@@ -7,7 +7,7 @@ if (id == null || id == "null") {
     window.location = "..//..//index.html";
 }
 
-fetch(`http://localhost:5000/scmt/consultarRutas?compania=` + compania, {
+fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compania, {
     method: 'GET'
 })
     .then(res => res.json())
@@ -70,7 +70,7 @@ function recuperar1(datos) {
 }
 
 function actualizar(id) {
-    fetch(`http://localhost:5000/scmt/consultarRuta?id=` + id, {
+    fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRuta?id=` + id, {
         method: 'GET'
     })
         .then(res => res.json())
@@ -86,7 +86,7 @@ function actualizar(id) {
 
 function recuperarUnidad(datos) {
     document.getElementById("mode").value = 1
-    fetch(`http://localhost:5000/scmt/consultarConductores?compania=` + compania, {
+    fetch(`https://scmtapis.azurewebsites.net/scmt/consultarConductores?compania=` + compania, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -116,7 +116,7 @@ function eliminar(id){
         confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/scmt/eliminarRuta?id=` + id, {
+            fetch(`https://scmtapis.azurewebsites.net/scmt/eliminarRuta?id=` + id, {
                 method: 'GET'
             })
                 .then(res => res.json())
@@ -141,7 +141,7 @@ $(document).ready(function () {
     $("#myBtn").click(function () {
         $("#ModalRuta").modal();
         limpiar();
-        fetch(`http://localhost:5000/scmt/consultarConductores?compania=` + compania, {
+        fetch(`https://scmtapis.azurewebsites.net/scmt/consultarConductores?compania=` + compania, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -191,9 +191,9 @@ function guardar(){
     descripcionR = document.getElementById("descripcionR").value;
     
     if (document.getElementById("mode").value == 1) {
-        url = "http://localhost:5000/scmt/actualizarRuta?id=" + idActualizarRuta;
+        url = "https://scmtapis.azurewebsites.net/scmt/actualizarRuta?id=" + idActualizarRuta;
     } else {
-        url = "http://localhost:5000/scmt/insertarRuta";
+        url = "https://scmtapis.azurewebsites.net/scmt/insertarRuta";
     }
     if (validaciones() != false) {
         const cuerpo = new URLSearchParams("tcompania_id=" + compania);
