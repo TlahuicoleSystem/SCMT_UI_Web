@@ -1,7 +1,7 @@
 let id = sessionStorage.getItem("id"),
     compania = sessionStorage.getItem("compania");
 
-fetch(`http://localhost:5000/scmt/consultarRutas?compania=` + compania, {
+fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compania, {
     method: 'GET'
 })
     .then(res => res.json())
@@ -27,7 +27,7 @@ function listaRutas(datos) {
 function buscarRutas() {
     let conductor = document.getElementById("listaRutas").value;
     console.log(conductor);
-    fetch(`http://localhost:5000/scmt/concultarIncidencias?rutas=` + conductor, {
+    fetch(`https://scmtapis.azurewebsites.net/scmt/concultarIncidencias?rutas=` + conductor, {
         method: 'GET'
     })
         .then(res => res.json())

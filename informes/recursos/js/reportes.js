@@ -139,13 +139,13 @@ function cargar(tipo) {
     let url = null;
     switch (tipo) {
         case 1:
-            url = "http://localhost:5000/scmt/consultarInformeIncidencia?inicio=" + inicio + "&fin=" + fin;
+            url = "https://scmtapis.azurewebsites.net/scmt/consultarInformeIncidencia?inicio=" + inicio + "&fin=" + fin;
             break;
         case 2:
             url = ""
             break;
         case 3:
-            url = "http://localhost:5000/scmt/consultarInformeAsistencia?inicio=" + inicio + "&fin=" + fin;
+            url = "https://scmtapis.azurewebsites.net/scmt/consultarInformeAsistencia?inicio=" + inicio + "&fin=" + fin;
             break;
 
         default:

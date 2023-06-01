@@ -14,7 +14,7 @@ $(document).ready(function () {
     $("#myBtn").click(function () {
         $("#ModalRuta").modal();
         //limpiar();
-        fetch(`http://localhost:5000/scmt/consultarPasajeros?compania=` + compania, {
+        fetch(`https://scmtapis.azurewebsites.net/scmt/consultarPasajeros?compania=` + compania, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -40,7 +40,7 @@ function listaPasajeros(datos){
     } 
 }
 
-fetch(`http://localhost:5000/scmt/consultarPasajerosRuta?id=` + codigo, {
+fetch(`https://scmtapis.azurewebsites.net/scmt/consultarPasajerosRuta?id=` + codigo, {
     method: 'GET'
 })
     .then(res => res.json())
@@ -74,7 +74,7 @@ function guardar(){
     let pasajero = document.getElementById("pasajeros").value;
         const cuerpo = new URLSearchParams("truta_id=" + codigo);
         cuerpo.append("tusuario_id", pasajero);
-        fetch('http://localhost:5000/scmt/insertarPasajeroRuta?ruta=' +codigo+'&pasajero='+pasajero, {
+        fetch('https://scmtapis.azurewebsites.net/scmt/insertarPasajeroRuta?ruta=' +codigo+'&pasajero='+pasajero, {
             method: "POST",
             body: cuerpo,
         })
@@ -112,7 +112,7 @@ function eliminar(id){
         confirmButtonText: 'Si, eliminar!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/scmt/eliminarPasajeroRuta?id=` + id, {
+            fetch(`https://scmtapis.azurewebsites.net/scmt/eliminarPasajeroRuta?id=` + id, {
                 method: 'GET'
             })
                 .then(res => res.json())
