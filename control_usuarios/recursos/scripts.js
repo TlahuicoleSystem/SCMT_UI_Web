@@ -1,5 +1,3 @@
-let id = sessionStorage.getItem("id"),
-    compania = sessionStorage.getItem("compania");
 let idActualizar = null
 let idActualizarUser = null
 

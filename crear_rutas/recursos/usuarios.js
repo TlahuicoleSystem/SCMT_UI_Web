@@ -1,9 +1,6 @@
-let id = sessionStorage.getItem("id"),
-    compania = sessionStorage.getItem("compania");
-
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var codigo = url.searchParams.get("codigo");
+var url_string = window.location.href;
+var url = new URL(url_string);
+var codigo = url.searchParams.get("codigo");
 
 if (id == null || id == "null") {
     alert("Ingresa para continuar")

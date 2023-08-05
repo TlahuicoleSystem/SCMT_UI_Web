@@ -2,14 +2,14 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Control de Unidades</title>
 
     <!--CDN-->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" />
     <!-- jQuery library -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <!-- Popper JS -->
@@ -17,11 +17,10 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
     <!--Iconos-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!--Styles-->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../recursos/css/styles.css">
-
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../recursos/css/styles.css" />
 </head>
 
 <body class="fondo">
@@ -29,68 +28,59 @@
         <div class="sidebar">
             <div class="logo_content">
                 <div class="logo">
-                    <i class='bx bxs-truck'></i>
+                    <i class="bx bxs-truck"></i>
                     <div class="logo_name">SCMT</div>
                 </div>
-                <i class='bx bx-menu' id='btn'></i>
+                <i class="bx bx-menu" id="btn"></i>
             </div>
 
             <ul class="nav">
                 <li>
                     <a href="../inicio.html">
-                        <i class='bx bx-grid'></i>
+                        <i class="bx bx-grid"></i>
                         <span class="link_name">Inicio</span>
                     </a>
                     <span class="tooltip">Inicio</span>
                 </li>
                 <li>
                     <a href="/control_usuarios/usuarios.html">
-                        <i class='bx bxs-user-detail'></i>
+                        <i class="bx bxs-user-detail"></i>
                         <span class="link_name">Control de usuarios</span>
                     </a>
                     <span class="tooltip">Control de usuarios</span>
                 </li>
                 <li>
-                    <a href="/ubicacion_unidades/unidades.html">
-                        <i class='bx bx-map'></i>
+                    <a href="#" data-toggle="modal" data-target="#modal2">
+                        <i class="bx bx-map"></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
                 </li>
                 <li>
                     <a href="/crear_rutas/rutas.html">
-                        <i class='bx bxs-map-alt'></i>
+                        <i class="bx bxs-map-alt"></i>
                         <span class="link_name">Crear rutas</span>
                     </a>
                     <span class="tooltip">Crear rutas</span>
                 </li>
                 <li>
                     <a href="/informes/informes.html">
-                        <i class='bx bxs-archive'></i>
+                        <i class="bx bxs-archive"></i>
                         <span class="link_name">Informes</span>
                     </a>
                     <span class="tooltip">Informes</span>
                 </li>
                 <li>
                     <a href="/incidencias/incidencias.html">
-                        <i class='bx bxs-bookmark'></i>
+                        <i class="bx bxs-bookmark"></i>
                         <span class="link_name">Incidencias</span>
                     </a>
                     <span class="tooltip">Incidencias</span>
                 </li>
-                <!-- <li>
-                        <a href="#">
-                            <i class='bx bxs-building'></i>
-                            <span class="link_name">Otros</span>
-                        </a>
-                        <span class="tooltip">Otros</span>
-                    </li> -->
+
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
-                        <!--<img src="" alt="Imagen de perfil" id = "foto_perfil" class="img-fluid espaciado-img bx">
-                                                    <span class="link_name">Josue Barrales Galvez</span>-->
                     </a>
-                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
@@ -105,34 +95,38 @@
 
         <div class="py-4">
             <div class="row">
-                <div class="col-4">
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1" class="color-texto">Escoge la ruta que quieres
-                            visualizar</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option>Soriana</option>
-                            <option>Zacatelco</option>
-                            <option>Xaltocan</option>
-                            <option>Apizaco</option>
-                            <option>Puebla</option>
-                            <option>Todas</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <button type="submit" class="btn btn-secondary btn-ubicacion">Buscar unidad</button>
+                <div class="col-4" id="insertarNombre">
+                    
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <div class="">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.870906434365!2d-98.12920155009795!3d19.417982946116588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d01f8e62a27079%3A0x97b69109a88aea17!2sUATx%3A%20Facultad%20de%20Ciencias%20B%C3%A1sicas%2C%20Ingenier%C3%ADa%20y%20Tecnolog%C3%ADa!5e0!3m2!1ses!2smx!4v1680659596955!5m2!1ses!2smx"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        <div id="map"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de ubicacion-->
+    <div class="modal fade color-texto" id="modal2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header fondo borde">
+                    <h4 class="modal-title">Rastrear unidad</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form id="form-eliminarp">
+                    <div class="modal-body fondo borde">
+                        <select class="form-control" id="listaRutas">
+
+                        </select>
+                    </div>
+                    <div class="modal-footer fondo borde">
+                        <button type="button" class="btn btn-success" onclick="rastrear();">Buscar unidad</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -143,7 +137,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header fondo borde">
-                    <h5 class="modal-title color-texto" id="modal-Perfil-titulo">Perfil</h5>
+                    <h5 class="modal-title color-texto" id="modal-Perfil-titulo">
+                        Perfil
+                    </h5>
                     <button type="button" class="close color-texto" data-dismiss="modal" aria-label="Cerrar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -152,19 +148,97 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-4">
                             <img src="" alt="Imagen de perfil" id="foto_perfil"
-                                class="img-fluid img-redondo foto_perfil">
+                                class="img-fluid img-redondo foto_perfil" />
                         </div>
-                        <div class="col-8 color-texto " id="nombreMenu">
-                        </div>
+                        <div class="col-8 color-texto" id="nombreMenu"></div>
                     </div>
                 </div>
                 <div class="modal-footer fondo borde">
-                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()">Cerrar Sesión</button>
+                    <button type="button" class="btn btn-danger" onclick="cerrarSesion()"> Cerrar Sesión </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJHZQIYMEgHtY61IkkCB50OdDXcK5FN4&callback=initMap" async defer></script>
+    <script src="recursos/ubicacion.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+        let url_string = window.location.href;
+        let url = new URL(url_string);
+        let ruta = url.searchParams.get("ruta");
+        let nombreRuta = url.searchParams.get("nombre");
+        let nombreRutaHtml = document.getElementById("insertarNombre");
+        nombreRutaHtml.innerHTML += `
+            <label class="color-texto">Estas rastreando la ruta: </label> <em class="color-texto">${nombreRuta}</em>
+        `;
+        const firebaseConfig = {
+            apiKey: "AIzaSyC0fywb_GO6XhsCPx3RjpiE_irRYbfvn6s",
+            authDomain: "scmtlocation.firebaseapp.com",
+            databaseURL: "https://scmtlocation-default-rtdb.firebaseio.com",
+            projectId: "scmtlocation",
+            storageBucket: "scmtlocation.appspot.com",
+            messagingSenderId: "157381922300",
+            appId: "1:157381922300:web:7596085363602fcd0cb679",
+        };
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        verUbicacion(db, ref, onValue, ruta, nombreRuta);
+    </script>
+    <script>
+        let map;
+        let marcadorTemp = null;//Marcador temporal
+        let intervalId; // Identificador del intervalo
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 19.3184303, lng: -98.254953 }, // Punto de inicio en el mapa
+                zoom: 16,
+            });
+
+            // Función para agregar un marcador en el mapa
+            function agregarMarcador(location) {
+                let datos = revisar();
+                var marker = new google.maps.Marker({
+                    position: location,
+                    icon: '..//recursos/img/icono_bus.png',
+                    title: datos[3],
+                    map: map,
+                });
+                marcadorTemp = marker;
+            }
+
+            // Centrar el mapa
+            function centrarMap(location) {
+                map.setCenter(location);
+            }
+
+            // Función para obtener la ubicación actual
+            function showLocation(latitude, longitude) {
+                var location = { lat: latitude, lng: longitude };
+                if(marcadorTemp != null){
+                    borrarMarcadores();
+                }
+                agregarMarcador(location);
+                centrarMap(location);
+            }
+
+            function borrarMarcadores(){
+                marcadorTemp.setMap(null);
+                marcadorTemp = null;
+            }
+
+            // Función para actualizar la ubicación cada 7 segundos
+            function actualizarUbicacion() {
+                let datos = revisar();
+                let latitude = datos[1];
+                let longitude = datos[2];
+                showLocation(latitude, longitude);
+            }
+            intervalId = setInterval(actualizarUbicacion, 7000);
+        }
+    </script>
     <script src="/recursos/js/inicio.js"></script>
 </body>
 
