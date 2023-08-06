@@ -50,13 +50,13 @@
                     </a>
                     <span class="tooltip">Control de usuarios</span>
                 </li>
-                <!-- <li>
-                    <a href="../ubicacion_unidades/unidades.html" id="ubicacionUnidadesLink">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#modal2">
                         <i class='bx bx-map'></i>
                         <span class="link_name">Ubicacion de unidades</span>
                     </a>
                     <span class="tooltip">Ubicacion de unidades</span>
-                </li> -->
+                </li>
                 <li>
                     <a href="../crear_rutas/rutas.html" id="crearRutasLink">
                         <i class='bx bxs-map-alt'></i>
@@ -80,10 +80,8 @@
                 </li>
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modal-Perfil" id="nombre_spam">
-                        <!--<img src="" alt="Imagen de perfil" id="foto_perfil" class="img-fluid espaciado-img bx">
-                    <span class="link_name">Josue Barrales Galvez</span>-->
+
                     </a>
-                    <!-- <span class="tooltip">Josue Barrales Galvez</span> -->
                 </li>
             </ul>
         </div>
@@ -97,35 +95,22 @@
                         <h4 class="color-texto">Control de usuarios</h4>
                     </div>
                     <div class="card-body">
-                        <i class='bx bx-grid icono-personalizado'></i>
+                        <i class='bx bxs-user-detail icono-personalizado'></i>
                     </div>
                     <a href="control_usuarios/usuarios.html">
                         <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
                     </a>
                 </div>
             </div>
-            <!-- <div class="col-4">
+            <div class="col-4">
                 <div class="card transparencia m-3 p-2">
                     <div class="card-header">
                         <h4 class="color-texto">Ubicacion de unidades</h4>
                     </div>
                     <div class="card-body">
-                        <i class='bx bxs-user-detail icono-personalizado'></i>
-                    </div>
-                    <a href="ubicacion_unidades/unidades.html">
-                        <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
-                    </a>
-                </div>
-            </div> -->
-            <div class="col-4">
-                <div class="card transparencia m-3 p-2">
-                    <div class="card-header">
-                        <h4 class="color-texto">Crear rutas</h4>
-                    </div>
-                    <div class="card-body">
                         <i class='bx bx-map icono-personalizado'></i>
                     </div>
-                    <a href="crear_rutas/rutas.html">
+                    <a href="#" data-toggle="modal" data-target="#modal2">
                         <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
                     </a>
                 </div>
@@ -133,12 +118,12 @@
             <div class="col-4">
                 <div class="card transparencia m-3 p-2">
                     <div class="card-header">
-                        <h4 class="color-texto">Informes</h4>
+                        <h4 class="color-texto">Crear rutas</h4>
                     </div>
                     <div class="card-body">
-                        <i class='bx bxs-archive icono-personalizado'></i>
+                        <i class='bx bxs-map-alt icono-personalizado'></i>
                     </div>
-                    <a href="informes/informes.html">
+                    <a href="crear_rutas/rutas.html">
                         <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
                     </a>
                 </div>
@@ -158,19 +143,41 @@
                     </a>
                 </div>
             </div>
-            <!-- <div class="col-4">
+            <div class="col-4">
                 <div class="card transparencia m-3 p-2">
                     <div class="card-header">
-                        <h4 class="color-texto">Otros</h4>
+                        <h4 class="color-texto">Informes</h4>
                     </div>
                     <div class="card-body">
-                        <img src="https://via.placeholder.com/100" alt="" class="img-fluid d-block mx-auto">
+                        <i class='bx bxs-archive icono-personalizado'></i>
                     </div>
-                    <a href="#">
+                    <a href="informes/informes.html">
                         <button type="submit" class="btn btn-info d-block mx-auto btn-padding">Administrar</button>
                     </a>
                 </div>
-            </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de ubicacion-->
+    <div class="modal fade color-texto" id="modal2">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header fondo borde">
+                    <h4 class="modal-title">Rastrear unidad</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form id="form-eliminarp">
+                    <div class="modal-body fondo borde">
+                        <select class="form-control" id="listaRutas">
+
+                        </select>
+                    </div>
+                    <div class="modal-footer fondo borde">
+                        <button type="button" class="btn btn-success" onclick="rastrear();">Buscar unidad</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -201,7 +208,6 @@
             </div>
         </div>
     </div>
-
     <script src="recursos/js/inicio.js"></script>
 </body>
 

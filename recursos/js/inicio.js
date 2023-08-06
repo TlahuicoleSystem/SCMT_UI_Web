@@ -60,3 +60,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+
+let id = sessionStorage.getItem("id"),
+    compania = sessionStorage.getItem("compania");
+
+fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compania, {
+    method: 'GET'
+})
+    .then(res => res.json())
+    .then(datos => {
+        listaRutas(datos);
+    })
+    .catch(function (err) {
+        alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+        console.log(err);
+    });
+
+function listaRutas(datos) {
+    let listaRutas = document.getElementById("listaRutas")
+    listaRutas.innerHTML = ''
+    for (let valor of datos.data) {
+        listaRutas.innerHTML += `
+            <option VALUE="${valor.id}" >${valor.nombre_ruta}</option>
+        `;
+    }
+};
+
+function rastrear (){
+    let ruta = document.getElementById("listaRutas").value;
+    var combo = document.getElementById("listaRutas");
+    var nombreRuta = combo.options[combo.selectedIndex].text;
+    window.location = "../ubicacion_unidades/unidades.html?ruta="+ruta+"&nombre="+nombreRuta;
+}

@@ -1,21 +1,18 @@
-let id = sessionStorage.getItem("id"),
-    compania = sessionStorage.getItem("compania");
-
 fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compania, {
     method: 'GET'
 })
     .then(res => res.json())
     .then(datos => {
-        listaRutas(datos);
+        listaRutass(datos);
     })
     .catch(function (err) {
         alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
         console.log(err);
     });
 
-function listaRutas(datos) {
+function listaRutass(datos) {
     console.log(datos.data)
-    let listaRutas = document.getElementById("listaRutas")
+    let listaRutas = document.getElementById("listaRutass")
     listaRutas.innerHTML = ''
     for (let valor of datos.data) {
         listaRutas.innerHTML += `
@@ -25,7 +22,7 @@ function listaRutas(datos) {
 }
 
 function buscarRutas() {
-    let conductor = document.getElementById("listaRutas").value;
+    let conductor = document.getElementById("listaRutass").value;
     console.log(conductor);
     fetch(`https://scmtapis.azurewebsites.net/scmt/concultarIncidencias?rutas=` + conductor, {
         method: 'GET'
