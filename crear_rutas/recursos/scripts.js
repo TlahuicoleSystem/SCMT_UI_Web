@@ -1,11 +1,4 @@
-let id = sessionStorage.getItem("id"),
-    compania = sessionStorage.getItem("compania"),
-    idActualizarRuta = null;
-
-if (id == null || id == "null") {
-    alert("Ingresa para continuar")
-    window.location = "..//..//index.html";
-}
+let idActualizarRuta = null;
 
 fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compania, {
     method: 'GET'
