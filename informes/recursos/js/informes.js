@@ -25,14 +25,14 @@ function generarPDFIncidencias() {
         const doc = new jsPDF();
         // Agregar contenido al PDF
         let encabezadoUrlImg = "/recursos/img/SCMTLOGO.jpg";
-        let piePagina = "SCMT por Josue y Abraham - Pagina ";
+        let piePagina = "SCMT por Josué y Abraham - Pagina ";
         let i = 1;
         let fecha = new Date();
         let fechaFormateada = fecha.toLocaleString();
 
         // Agregar contenido al PDF
         doc.text('Informe de incidencias', 80, 17);
-        doc.text('Fecha/Hora de impresion: ' + fechaFormateada.slice(0, 16), 10, 27);
+        doc.text('Fecha/Hora de impresión: ' + fechaFormateada.slice(0, 16), 10, 27);
 
         let totalPaginas = doc.internal.getNumberOfPages();
         for (let j = 1; j <= totalPaginas; j++) {
@@ -46,7 +46,7 @@ function generarPDFIncidencias() {
             'Nombre del conductor',
             'Incidencia',
             'Ruta',
-            'Descripcion',
+            'Descripción',
             'Fecha/Hora'
         ];
         obtenerDatos(1).then(datos => {
@@ -90,14 +90,14 @@ function generarPDFAsistencia() {
         const doc = new jsPDF();
         // Agregar contenido al PDF
         let encabezadoUrlImg = "/recursos/img/SCMTLOGO.jpg";
-        let piePagina = "SCMT por Josue y Abraham - Pagina ";
+        let piePagina = "SCMT por Josué y Abraham - Pagina ";
         let i = 1;
         let fecha = new Date();
         let fechaFormateada = fecha.toLocaleString();
 
         // Agregar contenido al PDF
         doc.text('Informe de asistencia', 80, 17);
-        doc.text('Fecha/Hora de impresion: ' + fechaFormateada.slice(0, 16), 10, 27);
+        doc.text('Fecha/Hora de impresión: ' + fechaFormateada.slice(0, 16), 10, 27);
 
         let totalPaginas = doc.internal.getNumberOfPages();
         for (let j = 1; j <= totalPaginas; j++) {
@@ -109,7 +109,7 @@ function generarPDFAsistencia() {
         let columns = [
             'No.',
             'Nombre',
-            'Area',
+            'Área',
             'Jefe inmediato',
             'Ruta',
             'Fecha/Hora'

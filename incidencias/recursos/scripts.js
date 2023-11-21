@@ -6,7 +6,7 @@ fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compa
         listaRutass(datos);
     })
     .catch(function (err) {
-        alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+        alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
         console.log(err);
     });
 
@@ -32,7 +32,7 @@ function buscarRutas() {
             listarIncidencias(datos);
         })
         .catch(function (err) {
-            alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+            alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
             console.log(err);
         });
 }

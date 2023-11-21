@@ -20,7 +20,7 @@ fetch(`https://scmtapis.azurewebsites.net/scmt/consultarAll?compania=` + compani
         recuperar1(datos)
     })
     .catch(function (err) {
-        alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+        alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
         console.log(err);
     });
 
@@ -90,7 +90,7 @@ function actualizar(id) {
             recuperarUnidad(datos)
         })
         .catch(function (err) {
-            alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+            alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
             console.log(err);
         });
 
@@ -237,7 +237,7 @@ function insertarAdmin(datos) {
             })
             .catch(function (err) {
                 console.log(err);
-                alert("Lo sentimos, error al carga la imagen intenta de nuevo");
+                alert("Lo sentimos, error al cargar la imagen intenta de nuevo");
             });
     } else {
         Swal.fire({
@@ -285,7 +285,7 @@ function insertarConductor(datos) {
             })
             .catch(function (err) {
                 console.log(err);
-                alert("Lo sentimos, error al carga la imagen intenta de nuevo");
+                alert("Lo sentimos, error al cargar la imagen intenta de nuevo");
             });
     } else {
         Swal.fire({
@@ -309,10 +309,10 @@ function insertarPasajero(datos) {
         fotografia = datos.data;
     }
     id_pasajero = document.getElementById("id_pasajero").value,
-    telefono_pasajero = document.getElementById("telefono_pasajero").value,
-    area_pasajero = document.getElementById("area_pasajero").value,
-    jefe_inmediato_pasajero = document.getElementById("jefe_inmediato_pasajero").value,
-    turno_pasajero = document.getElementById("turno_pasajero").value;
+        telefono_pasajero = document.getElementById("telefono_pasajero").value,
+        area_pasajero = document.getElementById("area_pasajero").value,
+        jefe_inmediato_pasajero = document.getElementById("jefe_inmediato_pasajero").value,
+        turno_pasajero = document.getElementById("turno_pasajero").value;
     if (validar() != false && validarPasajero() != false) {
         const cuerpo = new URLSearchParams("id_pasajero=" + id_pasajero);
         cuerpo.append("fotografia", fotografia);
@@ -334,7 +334,7 @@ function insertarPasajero(datos) {
             })
             .catch(function (err) {
                 console.log(err);
-                alert("Lo sentimos, error al carga la imagen intenta de nuevo");
+                alert("Lo sentimos, error al cargar la imagen intenta de nuevo");
             });
     } else {
         Swal.fire({
@@ -408,7 +408,7 @@ function insertarUsuario(datos) {
         })
         .catch(function (err) {
             console.log(err);
-            alert("Error el guardar el producto");
+            alert("Error al guardar el producto");
         });
 }
 
@@ -590,8 +590,8 @@ function limpiar() {
 
 function eliminar(id) {
     Swal.fire({
-        title: 'Desea eliminar el usuario?',
-        text: "No podra revertir esta accion",
+        title: '¿Desea eliminar el usuario?',
+        text: "No podrá revertir esta acción",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -613,7 +613,7 @@ function eliminar(id) {
                     window.location.reload()
                 })
                 .catch(function (err) {
-                    alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+                    alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
                     console.log(err);
                 });
         }
