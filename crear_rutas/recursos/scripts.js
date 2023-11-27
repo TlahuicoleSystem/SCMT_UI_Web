@@ -9,7 +9,7 @@ fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compa
         console.log(datos)
     })
     .catch(function (err) {
-        alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+        alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
         console.log(err);
     });
 
@@ -18,7 +18,7 @@ function recuperar1(datos) {
     contenido.innerHTML = ''
     let i = 1;
     for (let valor of datos.data) {
-        let nombre = valor.nombre + " " + valor.primer_apellido +  " " + valor.segundo_apellido
+        let nombre = valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido
         contenido.innerHTML += `
             <div class="card color-card">
                 <div class="card-header" id="heading${i}">
@@ -39,11 +39,11 @@ function recuperar1(datos) {
                                 </iframe>
                             </div>
                             <div class="col-sm-5 py-4">
-                                <h3>Descripcion:</h3>
+                                <h3>Descripción:</h3>
                                 <p>${valor.descripcion}</p> 
                                 <h3>Punto de acceso:</h3>
                                 <p>${valor.punto_acceso}</p>
-                                <h3>Vehiculo:</h3>
+                                <h3>Vehículo:</h3>
                                 <p>${valor.vehiculo}</p> 
                                 <h3>Conductor:</h3>
                                 <p>${nombre}</p>
@@ -71,7 +71,7 @@ function actualizar(id) {
             recuperarUnidad(datos)
         })
         .catch(function (err) {
-            alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+            alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
             console.log(err);
         });
 
@@ -80,16 +80,16 @@ function actualizar(id) {
 function recuperarUnidad(datos) {
     document.getElementById("mode").value = 1
     fetch(`https://scmtapis.azurewebsites.net/scmt/consultarConductores?compania=` + compania, {
-            method: 'GET'
+        method: 'GET'
+    })
+        .then(res => res.json())
+        .then(datoss => {
+            listaConductores(datoss, 1, datos.data[0].tusuario_id_conductor);
         })
-            .then(res => res.json())
-            .then(datoss => {
-                listaConductores(datoss,1,datos.data[0].tusuario_id_conductor);
-            })
-            .catch(function (err) {
-                alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
-                console.log(err);
-            });
+        .catch(function (err) {
+            alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
+            console.log(err);
+        });
     $("#ModalRuta").modal();
     document.getElementById("nombreR").value = datos.data[0].nombre_ruta;
     document.getElementById("punto_acceso").value = datos.data[0].punto_acceso;
@@ -98,10 +98,10 @@ function recuperarUnidad(datos) {
     idActualizarRuta = datos.data[0].id;
 }
 
-function eliminar(id){
+function eliminar(id) {
     Swal.fire({
-        title: 'Desea eliminar la ruta seleccionada?',
-        text: "No podra revertir esta accion, esta accion podria causar daños en el sistema.",
+        title: '¿Desea eliminar la ruta seleccionada?',
+        text: "No podrá revertir esta acción, esta acción podría causar daños en el sistema.",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -123,7 +123,7 @@ function eliminar(id){
                     window.location.reload()
                 })
                 .catch(function (err) {
-                    alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+                    alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
                     console.log(err);
                 });
         }
@@ -139,50 +139,50 @@ $(document).ready(function () {
         })
             .then(res => res.json())
             .then(datos => {
-                listaConductores(datos,0,null);
+                listaConductores(datos, 0, null);
             })
             .catch(function (err) {
-                alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+                alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
                 console.log(err);
             });
-        
+
     });
 });
 
-function listaConductores(datos,status,id){
+function listaConductores(datos, status, id) {
     console.log(datos.data)
     let listaConductores = document.getElementById("conductores")
-        listaConductores.innerHTML = ''
-    if(status = 1){
+    listaConductores.innerHTML = ''
+    if (status = 1) {
         for (let valor of datos.data) {
-            if(id === valor.id){
+            if (id === valor.id) {
                 listaConductores.innerHTML += `
-                    <option VALUE="${valor.id}" selected>${valor.nombre + " " + valor.primer_apellido + " "+ valor.segundo_apellido}</option>
+                    <option VALUE="${valor.id}" selected>${valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido}</option>
                 `;
-            }else{
+            } else {
                 listaConductores.innerHTML += `
-                    <option VALUE="${valor.id}" >${valor.nombre + " " + valor.primer_apellido + " "+ valor.segundo_apellido}</option>
+                    <option VALUE="${valor.id}" >${valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido}</option>
                 `;
             }
         }
-    }else{
+    } else {
         for (let valor of datos.data) {
             listaConductores.innerHTML += `
-            <option VALUE="${valor.id}" >${valor.nombre + " " + valor.primer_apellido + " "+ valor.segundo_apellido}</option>
+            <option VALUE="${valor.id}" >${valor.nombre + " " + valor.primer_apellido + " " + valor.segundo_apellido}</option>
         `;
         }
     }
-     
+
 }
 
-function guardar(){
+function guardar() {
     let url = null;
     let nombreR = document.getElementById("nombreR").value,
-    conductor = document.getElementById("conductores").value,
-    punto_acceso = document.getElementById("punto_acceso").value,
-    vehiculo = document.getElementById("vehiculo").value,
-    descripcionR = document.getElementById("descripcionR").value;
-    
+        conductor = document.getElementById("conductores").value,
+        punto_acceso = document.getElementById("punto_acceso").value,
+        vehiculo = document.getElementById("vehiculo").value,
+        descripcionR = document.getElementById("descripcionR").value;
+
     if (document.getElementById("mode").value == 1) {
         url = "https://scmtapis.azurewebsites.net/scmt/actualizarRuta?id=" + idActualizarRuta;
     } else {
@@ -199,21 +199,21 @@ function guardar(){
             method: "POST",
             body: cuerpo,
         })
-        .then(function (response) {
-            if (response.ok) {
-                return response.text();
-            } else {
-                throw "Error en la llamada";
-            }
-        })
-        .then(function (texto) {
-            alert("Datos guardados correctamente");
-            window.location.reload();
-        })
-        .catch(function (err) {
-            console.log(err);
-            alert("Error el guardar el producto");
-        });
+            .then(function (response) {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw "Error en la llamada";
+                }
+            })
+            .then(function (texto) {
+                alert("Datos guardados correctamente");
+                window.location.reload();
+            })
+            .catch(function (err) {
+                console.log(err);
+                alert("Error el guardar el producto");
+            });
     } else {
         Swal.fire({
             icon: "warning",
@@ -226,7 +226,7 @@ function guardar(){
 
 }
 
-function validaciones(){
+function validaciones() {
     const nombreR = document.getElementById("nombreR"),
         punto_acceso = document.getElementById("punto_acceso"),
         vehiculo = document.getElementById("vehiculo"),
@@ -259,14 +259,14 @@ function validaciones(){
         descripcionRR = false;
     }
 
-    if (name != false && punto_accesoo != false && vehiculoo != false && descripcionRR != false ) {
+    if (name != false && punto_accesoo != false && vehiculoo != false && descripcionRR != false) {
         return true;
     } else {
         return false;
     }
 }
 
-function limpiar(){
+function limpiar() {
     idActualizarRuta = null;
     document.getElementById("mode").value = 0
     document.getElementById("nombreR").value = ""

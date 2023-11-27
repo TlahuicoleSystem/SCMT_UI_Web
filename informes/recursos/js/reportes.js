@@ -37,7 +37,7 @@ function incidencias() {
             <th scope="col">Nombre del conductor</th>
             <th scope="col">Incidencia</th>
             <th scope="col">Ruta</th>
-            <th scope="col">Descripcion</th>
+            <th scope="col">Descripción</th>
             <th scope="col">Fecha/Hora</th>
         </thead>
         <tbody id="contenido">
@@ -110,7 +110,7 @@ function asistencia() {
         <thead>
             <th scope="col">No.</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Area</th>
+            <th scope="col">Área</th>
             <th scope="col">Jefe inmediato</th>
             <th scope="col">Ruta</th>
             <th scope="col">Fecha/Hora</th>
@@ -159,7 +159,7 @@ function cargar(tipo) {
             recuperar(datos, tipo)
         })
         .catch(function (err) {
-            alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+            alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
             console.log(err);
         });
 }
