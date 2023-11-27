@@ -16,7 +16,7 @@ let nombre = sessionStorage.getItem("nombre"),
     fotoo = sessionStorage.getItem("foto"),
     tel = sessionStorage.getItem("telefono");
 document.getElementById("foto_perfil").src = fotoo;
-document.getElementById("nombreMenu").innerHTML = `<p>Hola ${nombre}</p> <p>Descripcion: ${descripcionn}</p><p>Telefono: ${tel}</p>`
+document.getElementById("nombreMenu").innerHTML = `<p>Hola ${nombre}</p> <p>Descripción: ${descripcionn}</p><p>Telefono: ${tel}</p>`
 document.getElementById("nombre_spam").innerHTML = `<img src="${fotoo}" alt="Imagen de perfil" class="img-fluid espaciado-img bx" width="50" height="50"> <span class="link_name">${nombre}</span>`
 
 btn.onclick = function () {
@@ -73,7 +73,7 @@ fetch(`https://scmtapis.azurewebsites.net/scmt/consultarRutas?compania=` + compa
         listaRutas(datos);
     })
     .catch(function (err) {
-        alert('Lo sentimos ocurrio error inesperado, intente de nuevo mas tarde')
+        alert('Lo sentimos ocurrió un error inesperado, intente de nuevo mas tarde')
         console.log(err);
     });
 
@@ -87,9 +87,9 @@ function listaRutas(datos) {
     }
 };
 
-function rastrear (){
+function rastrear() {
     let ruta = document.getElementById("listaRutas").value;
     var combo = document.getElementById("listaRutas");
     var nombreRuta = combo.options[combo.selectedIndex].text;
-    window.location = "../ubicacion_unidades/unidades.html?ruta="+ruta+"&nombre="+nombreRuta;
+    window.location = "../ubicacion_unidades/unidades.html?ruta=" + ruta + "&nombre=" + nombreRuta;
 }

@@ -52,9 +52,9 @@
                 <li>
                     <a href="#" data-toggle="modal" data-target="#modal2">
                         <i class="bx bx-map"></i>
-                        <span class="link_name">Ubicacion de unidades</span>
+                        <span class="link_name">Ubicación de unidades</span>
                     </a>
-                    <span class="tooltip">Ubicacion de unidades</span>
+                    <span class="tooltip">Ubicación de unidades</span>
                 </li>
                 <li>
                     <a href="/crear_rutas/rutas.html">
@@ -89,14 +89,14 @@
     <div class="container py-4">
         <div class="row">
             <div class="col-12">
-                <h1 class="color-texto">Ubicacion de las unidades</h1>
+                <h1 class="color-texto">Ubicación de las unidades</h1>
             </div>
         </div>
 
         <div class="py-4">
             <div class="row">
                 <div class="col-4" id="insertarNombre">
-                    
+
                 </div>
             </div>
             <div class="row">
@@ -160,7 +160,8 @@
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJHZQIYMEgHtY61IkkCB50OdDXcK5FN4&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTJHZQIYMEgHtY61IkkCB50OdDXcK5FN4&callback=initMap"
+        async defer></script>
     <script src="recursos/ubicacion.js"></script>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
@@ -217,14 +218,14 @@
             // Función para obtener la ubicación actual
             function showLocation(latitude, longitude) {
                 var location = { lat: latitude, lng: longitude };
-                if(marcadorTemp != null){
+                if (marcadorTemp != null) {
                     borrarMarcadores();
                 }
                 agregarMarcador(location);
                 centrarMap(location);
             }
 
-            function borrarMarcadores(){
+            function borrarMarcadores() {
                 marcadorTemp.setMap(null);
                 marcadorTemp = null;
             }
